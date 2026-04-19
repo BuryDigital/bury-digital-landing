@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 36" fill="none">
+  <rect x="2" y="2" width="32" height="32" rx="8" fill="#13131A" stroke="#2A2A35"></rect>
+  <path d="M12 11h6.5a4.5 4.5 0 0 1 2.8 8.02A5 5 0 0 1 19 25h-7V11Zm3 2.6v3.4h3.2a1.7 1.7 0 0 0 0-3.4H15Zm0 6v2.8h3.7a1.4 1.4 0 0 0 0-2.8H15Z" fill="#00D4AA"></path>
+  <circle cx="25.5" cy="24.5" r="2" fill="#00D4AA"></circle>
+  <text x="46" y="24" font-family="Inter, system-ui, sans-serif" font-size="18" font-weight="600" fill="#F0F0F0" letter-spacing="-0.02em">Bury</text>
+  <text x="91" y="24" font-family="Inter, system-ui, sans-serif" font-size="18" font-weight="400" fill="#8A8A9A" letter-spacing="-0.02em">Digital</text>
+</svg>

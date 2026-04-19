@@ -1,0 +1,260 @@
+/* ============================================================
+   Bury Digital — Design tokens
+   Single source of truth for colour, type, spacing, radii, motion.
+   Inter is shipped locally via @font-face below — no Google Fonts link needed.
+   ============================================================ */
+
+@font-face {
+  font-family: "Inter";
+  src: url("./fonts/Inter-VariableFont_opsz_wght.ttf") format("truetype-variations"),
+       url("./fonts/Inter-VariableFont_opsz_wght.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  /* -------- Colour: surfaces -------- */
+  --bg:              #0A0A0F;   /* page background */
+  --surface:         #13131A;   /* cards */
+  --surface-2:       #1C1C26;   /* modals, popovers, hover state of surface */
+  --surface-3:       #23232F;   /* top-of-stack, e.g. tooltip, context menu */
+
+  /* -------- Colour: borders -------- */
+  --border:          #2A2A35;   /* default separator */
+  --border-strong:   #3A3A48;   /* hover/active separator */
+
+  /* -------- Colour: text -------- */
+  --fg:              #F0F0F0;   /* headings, primary */
+  --fg-muted:        #8A8A9A;   /* body, secondary */
+  --fg-subtle:       #6A6A78;   /* timestamps, captions, placeholders */
+  --fg-on-accent:    #0A0A0F;   /* text on teal */
+
+  /* -------- Colour: brand -------- */
+  --accent:          #00D4AA;
+  --accent-hover:    #1AE0B8;
+  --accent-press:    #00B896;
+  --accent-soft:     rgba(0, 212, 170, 0.12);
+  --accent-ring:     rgba(0, 212, 170, 0.25);
+
+  /* -------- Colour: pipeline status -------- */
+  --status-new:        #00D4AA;
+  --status-contacted:  #F5A623;
+  --status-booked:     #A3E635;
+  --status-lost:       #6A6A78;
+
+  /* -------- Colour: semantic -------- */
+  --success:         #4ADE80;
+  --warning:         #F5A623;
+  --error:           #EF4444;
+  --info:            #3B82F6;
+
+  --success-soft:    rgba(74, 222, 128, 0.12);
+  --warning-soft:    rgba(245, 166, 35, 0.12);
+  --error-soft:      rgba(239, 68, 68, 0.12);
+  --info-soft:       rgba(59, 130, 246, 0.12);
+
+  /* -------- Colour: chart sequence -------- */
+  --chart-1: #00D4AA;
+  --chart-2: #3B82F6;
+  --chart-3: #F5A623;
+  --chart-4: #A78BFA;
+  --chart-5: #4ADE80;
+
+  /* -------- Type -------- */
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+
+  --fs-h1: 48px;   --lh-h1: 56px;   --ls-h1: -0.02em;
+  --fs-h2: 32px;   --lh-h2: 40px;   --ls-h2: -0.02em;
+  --fs-h3: 24px;   --lh-h3: 32px;   --ls-h3: -0.01em;
+  --fs-h4: 20px;   --lh-h4: 28px;   --ls-h4: -0.01em;
+  --fs-body: 16px; --lh-body: 24px;
+  --fs-small: 14px;--lh-small: 20px;
+  --fs-micro: 12px;--lh-micro: 16px;
+
+  --fw-regular: 400;
+  --fw-medium:  500;
+  --fw-semibold:600;
+
+  /* -------- Spacing (8pt — use exclusively) -------- */
+  --s-1:  4px;
+  --s-2:  8px;
+  --s-3:  12px;
+  --s-4:  16px;
+  --s-5:  24px;
+  --s-6:  32px;
+  --s-7:  48px;
+  --s-8:  64px;
+
+  /* -------- Radius -------- */
+  --r-btn:    8px;
+  --r-input:  8px;
+  --r-card:   12px;
+  --r-modal:  16px;
+  --r-pill:   999px;
+
+  /* -------- Shadow / elevation -------- */
+  --shadow-1: 0 1px 0 rgba(255,255,255,0.02) inset;           /* hairline top light */
+  --shadow-2: 0 8px 24px -12px rgba(0,0,0,0.5);               /* raised card */
+  --shadow-3: 0 16px 48px -16px rgba(0,0,0,0.6);              /* modal, popover */
+  --ring-focus: 0 0 0 1px var(--accent), 0 0 0 4px var(--accent-ring);
+
+  /* -------- Motion -------- */
+  --ease-out:   cubic-bezier(0.2, 0, 0, 1);
+  --ease-in-out:cubic-bezier(0.4, 0, 0.2, 1);
+  --dur-fast:   120ms;
+  --dur-base:   150ms;
+  --dur-slow:   200ms;
+
+  /* -------- Control heights -------- */
+  --h-sm: 32px;
+  --h-md: 40px;
+  --h-lg: 48px;
+}
+
+/* ============================================================
+   Semantic element styles — drop this file into any page and
+   bare HTML will render in the Bury aesthetic.
+   ============================================================ */
+
+html, body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-sans);
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  font-weight: var(--fw-regular);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3, h4 {
+  color: var(--fg);
+  font-weight: var(--fw-semibold);
+  margin: 0;
+  text-wrap: balance;
+}
+h1 { font-size: var(--fs-h1); line-height: var(--lh-h1); letter-spacing: var(--ls-h1); }
+h2 { font-size: var(--fs-h2); line-height: var(--lh-h2); letter-spacing: var(--ls-h2); }
+h3 { font-size: var(--fs-h3); line-height: var(--lh-h3); letter-spacing: var(--ls-h3); }
+h4 { font-size: var(--fs-h4); line-height: var(--lh-h4); letter-spacing: var(--ls-h4); }
+
+p, li {
+  color: var(--fg-muted);
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  text-wrap: pretty;
+}
+
+small, .text-small { font-size: var(--fs-small); line-height: var(--lh-small); color: var(--fg-muted); }
+.text-micro       { font-size: var(--fs-micro); line-height: var(--lh-micro); color: var(--fg-subtle); }
+
+.numeric, .stat {
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum" 1, "cv11" 1;
+  font-weight: var(--fw-medium);
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: color var(--dur-base) var(--ease-out);
+}
+a:hover { color: var(--accent-hover); }
+
+/* -------- Button primitives -------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--s-2);
+  height: var(--h-md);
+  padding: 0 var(--s-4);
+  border-radius: var(--r-btn);
+  border: 1px solid transparent;
+  font-family: inherit;
+  font-size: var(--fs-small);
+  font-weight: var(--fw-medium);
+  line-height: 1;
+  cursor: pointer;
+  transition: background var(--dur-base) var(--ease-out),
+              border-color var(--dur-base) var(--ease-out),
+              color var(--dur-base) var(--ease-out),
+              transform 80ms var(--ease-out);
+  user-select: none;
+}
+.btn:active { transform: scale(0.97); }
+.btn:focus-visible { outline: none; box-shadow: var(--ring-focus); }
+.btn[disabled] { opacity: 0.4; cursor: not-allowed; }
+
+.btn-primary { background: var(--accent); color: var(--fg-on-accent); }
+.btn-primary:hover { background: var(--accent-hover); }
+.btn-primary:active { background: var(--accent-press); }
+
+.btn-outline { background: transparent; border-color: var(--accent); color: var(--accent); }
+.btn-outline:hover { background: var(--accent-soft); }
+
+.btn-ghost { background: transparent; color: var(--fg); }
+.btn-ghost:hover { background: var(--surface-2); }
+
+.btn-sm { height: var(--h-sm); padding: 0 var(--s-3); font-size: var(--fs-micro); }
+.btn-lg { height: var(--h-lg); padding: 0 var(--s-5); font-size: var(--fs-body); }
+
+/* -------- Input primitives -------- */
+.input {
+  display: block;
+  width: 100%;
+  height: var(--h-md);
+  padding: 0 var(--s-3);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-input);
+  color: var(--fg);
+  font-family: inherit;
+  font-size: var(--fs-small);
+  transition: border-color var(--dur-base) var(--ease-out),
+              box-shadow var(--dur-base) var(--ease-out);
+}
+.input::placeholder { color: var(--fg-subtle); }
+.input:hover { border-color: var(--border-strong); }
+.input:focus { outline: none; border-color: var(--accent); box-shadow: var(--ring-focus); }
+
+/* -------- Card -------- */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-card);
+  padding: var(--s-5);
+}
+
+/* -------- Badge / pill -------- */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-2);
+  height: 24px;
+  padding: 0 var(--s-3);
+  border-radius: var(--r-pill);
+  font-size: var(--fs-micro);
+  font-weight: var(--fw-medium);
+  line-height: 1;
+  white-space: nowrap;
+}
+.badge .dot {
+  width: 6px; height: 6px; border-radius: 999px; background: currentColor;
+}
+
+.badge-new       { background: rgba(0,212,170,0.12); color: var(--status-new); }
+.badge-contacted { background: rgba(245,166,35,0.12); color: var(--status-contacted); }
+.badge-booked    { background: rgba(163,230,53,0.14); color: var(--status-booked); }
+.badge-lost      { background: rgba(106,106,120,0.18); color: var(--status-lost); }
+
+/* -------- Scrollbar polish (dark) -------- */
+* { scrollbar-width: thin; scrollbar-color: var(--border-strong) transparent; }
+*::-webkit-scrollbar { width: 10px; height: 10px; }
+*::-webkit-scrollbar-thumb { background: var(--border-strong); border-radius: 999px; border: 2px solid transparent; background-clip: padding-box; }
+*::-webkit-scrollbar-track { background: transparent; }
+
+/* -------- Selection -------- */
+::selection { background: var(--accent-soft); color: var(--fg); }

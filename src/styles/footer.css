@@ -1,0 +1,10 @@
+footer { padding:56px 0 32px; border-top:1px solid #2A2A35; }
+.foot-top { display:grid; grid-template-columns:1.5fr 1fr 1fr 1fr; gap:32px; margin-bottom:40px; }
+@media (max-width:860px){ .foot-top { grid-template-columns:1fr 1fr; } }
+.foot-col h3 { font-size:11px; color:#6A6A78; text-transform:uppercase; letter-spacing:0.08em; font-weight:600; margin:0 0 14px; }
+.foot-col a { display:block; font-size:13px; color:#8A8A9A; padding:4px 0; transition: color 150ms; }
+.foot-col a:hover { color:#F0F0F0; }
+.foot-brand p { font-size:13px; color:#6A6A78; margin:14px 0 0; max-width:28ch; line-height:20px; }
+.foot-bot { display:flex; justify-content:space-between; align-items:center; padding-top:24px; border-top:1px solid #2A2A35; font-size:12px; color:#6A6A78; flex-wrap:wrap; gap:12px; }
+.foot-badge { display:inline-flex; align-items:center; gap:8px; padding:4px 10px; border-radius:999px; background:#13131A; border:1px solid #2A2A35; font-size:11px; color:#8A8A9A; }
+.foot-badge .d { width:5px; height:5px; border-radius:999px; background:#00D4AA; }

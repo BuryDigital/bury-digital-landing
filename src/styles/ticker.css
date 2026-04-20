@@ -1,0 +1,8 @@
+/* "Built for" ticker */
+.ticker { border-top:1px solid #2A2A35; border-bottom:1px solid #2A2A35; overflow:hidden; background:#0F0F15; }
+.ticker-label { text-align:center; font-size:11px; text-transform:uppercase; letter-spacing:0.12em; color:#6A6A78; padding:24px 0 14px; }
+.ticker-track { display:flex; gap:48px; padding:0 0 26px; overflow-x:auto; scrollbar-width:none; white-space:nowrap; font-family:'Space Grotesk', Inter, sans-serif; font-weight:700; font-size:18px; color:#8A8A9A; letter-spacing:-0.02em; justify-content:center; }
+.ticker-track::-webkit-scrollbar { display:none; }
+.ticker-track span { display:inline-flex; align-items:center; gap:48px; }
+.ticker-track span::after { content:''; width:4px; height:4px; border-radius:999px; background:#3A3A48; }
+.ticker-track span:last-child::after { display:none; }

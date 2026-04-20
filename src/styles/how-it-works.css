@@ -1,0 +1,25 @@
+.how-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+@media (max-width:860px){ .how-grid { grid-template-columns:1fr; } }
+.step { background:#13131A; border:1px solid #2A2A35; border-radius:14px; padding:28px; display:flex; flex-direction:column; gap:16px; min-height:320px; position:relative; overflow:hidden; }
+.step-num { display:inline-flex; align-items:center; gap:10px; }
+.step-num .n { font-family:'Space Grotesk'; font-size:13px; font-weight:700; color:#00D4AA; letter-spacing:0; background:rgba(0,212,170,0.12); border:1px solid rgba(0,212,170,0.25); padding:2px 8px; border-radius:6px; }
+.step-num .l { font-size:12px; color:#6A6A78; text-transform:uppercase; letter-spacing:0.08em; font-weight:500; }
+.step h3 { font-size:19px; font-weight:600; margin:0; color:#F0F0F0; letter-spacing:-0.01em; }
+.step p { font-size:14px; color:#8A8A9A; line-height:21px; margin:0; }
+.step-viz { margin-top:auto; padding-top:8px; }
+
+/* Step 1 phone viz */
+.phone-mini { width:100%; background:#0F0F15; border:1px solid #2A2A35; border-radius:10px; padding:16px; display:flex; align-items:center; gap:14px; }
+.phone-mini .icn { width:44px; height:44px; border-radius:12px; background:#1C1C26; border:1px solid #2A2A35; display:flex; align-items:center; justify-content:center; color:#8A8A9A; position:relative; }
+.phone-mini .icn .badge { position:absolute; top:-4px; right:-4px; min-width:18px; height:18px; border-radius:999px; background:#EF4444; color:#fff; font-size:10px; font-weight:600; display:flex; align-items:center; justify-content:center; padding:0 5px; border:2px solid #0F0F15; }
+.phone-mini .txt .l1 { font-size:13px; color:#F0F0F0; font-weight:500; }
+.phone-mini .txt .l2 { font-size:11px; color:#6A6A78; margin-top:2px; font-variant-numeric:tabular-nums; }
+.phone-mini .time { margin-left:auto; font-size:10px; color:#EF4444; font-weight:500; font-variant-numeric:tabular-nums; }
+
+/* Step 3 summary card */
+.sum-card { background:#0F0F15; border:1px solid #2A2A35; border-radius:10px; padding:14px; display:flex; flex-direction:column; gap:10px; }
+.sum-row { display:flex; justify-content:space-between; font-size:11px; }
+.sum-row .k { color:#6A6A78; }
+.sum-row .v { color:#F0F0F0; font-weight:500; }
+.sum-row .v.hot { color:#F5A623; }
+.sum-row .v.green { color:#A3E635; }

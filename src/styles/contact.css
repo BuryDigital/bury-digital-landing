@@ -1,0 +1,30 @@
+.contact { background:#0D0D13; border-top:1px solid #2A2A35; border-bottom:1px solid #2A2A35; }
+
+.contact-lead { max-width:880px; margin:0 auto 32px; display:flex; justify-content:center; }
+.contact-who { display:flex; align-items:center; gap:16px; background:#13131A; border:1px solid #2A2A35; border-radius:999px; padding:12px 24px 12px 12px; }
+.av-xl { width:48px; height:48px; border-radius:999px; background:rgba(0,212,170,0.14); color:#00D4AA; display:flex; align-items:center; justify-content:center; font-family:'Space Grotesk', Inter, sans-serif; font-weight:700; font-size:16px; letter-spacing:-0.01em; }
+.contact-name { font-size:15px; font-weight:600; color:#F0F0F0; }
+.contact-role { font-size:12px; color:#8A8A9A; margin-top:2px; }
+
+.contact-grid { display:grid; grid-template-columns:repeat(3, 1fr); gap:16px; max-width:1080px; margin:0 auto; }
+@media (max-width:880px) { .contact-grid { grid-template-columns:1fr; } }
+
+.contact-card { display:flex; flex-direction:column; gap:8px; background:#13131A; border:1px solid #2A2A35; border-radius:16px; padding:28px; text-decoration:none; color:inherit; transition:border-color 150ms, background 150ms, transform 120ms; }
+.contact-card:hover { border-color:#3A3A48; background:#161620; transform:translateY(-2px); }
+
+/* Button-as-tile reset (email copy-to-clipboard) */
+button.contact-card { font:inherit; text-align:left; cursor:pointer; width:100%; }
+button.contact-card:active { transform:translateY(0); }
+.contact-card--copy { position:relative; }
+
+.toast { position:fixed; left:50%; bottom:32px; transform:translateX(-50%) translateY(16px); display:inline-flex; align-items:center; gap:10px; background:#13131A; border:1px solid #00D4AA; color:#F0F0F0; font-size:14px; font-weight:500; padding:12px 20px; border-radius:999px; box-shadow:0 16px 48px -16px rgba(0,0,0,0.6); opacity:0; pointer-events:none; transition:opacity 200ms, transform 200ms; z-index:100; }
+.toast.show { opacity:1; transform:translateX(-50%) translateY(0); }
+.toast svg { width:16px; height:16px; stroke:#00D4AA; fill:none; stroke-width:2.5; stroke-linecap:round; stroke-linejoin:round; }
+
+.contact-ic { width:44px; height:44px; border-radius:10px; display:flex; align-items:center; justify-content:center; margin-bottom:8px; }
+.contact-ic .icon-lg { width:22px; height:22px; stroke:currentColor; fill:none; stroke-width:2; stroke-linecap:round; stroke-linejoin:round; }
+
+.contact-eb { font-size:11px; text-transform:uppercase; letter-spacing:0.12em; color:#8A8A9A; font-weight:600; }
+.contact-title { font-size:18px; font-weight:600; color:#F0F0F0; letter-spacing:-0.01em; line-height:1.3; }
+.contact-val { font-size:13px; color:#00D4AA; font-weight:500; font-variant-numeric:tabular-nums; word-break:break-all; }
+.contact-note { font-size:13px; color:#8A8A9A; line-height:1.5; margin-top:8px; }

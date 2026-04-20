@@ -1,0 +1,25 @@
+.btn { display:inline-flex; align-items:center; justify-content:center; gap:8px; height:40px; padding:0 16px; border-radius:8px; font-family:Inter, sans-serif; font-size:14px; font-weight:500; cursor:pointer; border:1px solid transparent; transition: background 150ms, border-color 150ms, transform 80ms; white-space:nowrap; }
+.btn:active { transform: scale(0.97); }
+.btn-primary { background:#00D4AA; color:#0A0A0F; }
+.btn-primary:hover { background:#1AE0B8; }
+.btn-outline { background:transparent; border-color:#2A2A35; color:#F0F0F0; }
+.btn-outline:hover { border-color:#3A3A48; background:#13131A; }
+.btn-teal-outline { background:transparent; border-color:#00D4AA; color:#00D4AA; }
+.btn-teal-outline:hover { background: rgba(0,212,170,0.08); }
+.btn-ghost { background:transparent; color:#F0F0F0; }
+.btn-ghost:hover { background:#1C1C26; }
+.btn-lg { height:48px; padding:0 22px; font-size:15px; }
+
+.btn-lime { background:#A3E635; color:#0A0A0F; }
+.btn-lime:hover { background:#B8EF5E; }
+.btn-lime-outline { background:transparent; border-color:#A3E635; color:#A3E635; }
+.btn-lime-outline:hover { background: rgba(163,230,53,0.08); }
+
+/* Anchors styled as buttons — suppress default link hover colour + underline */
+a.btn, a.btn:hover { text-decoration:none; }
+a.btn-primary, a.btn-primary:hover { color:#0A0A0F; }
+a.btn-outline, a.btn-outline:hover { color:#F0F0F0; }
+a.btn-teal-outline, a.btn-teal-outline:hover { color:#00D4AA; }
+a.btn-lime, a.btn-lime:hover { color:#0A0A0F; }
+a.btn-lime-outline, a.btn-lime-outline:hover { color:#A3E635; }
+a.btn-ghost, a.btn-ghost:hover { color:#F0F0F0; }

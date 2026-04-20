@@ -1,0 +1,6 @@
+.stats { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+@media (max-width:860px){ .stats { grid-template-columns:1fr; } }
+.stat { background:#13131A; border:1px solid #2A2A35; border-radius:14px; padding:32px; }
+.stat .big { font-family:'Space Grotesk', Inter, sans-serif; font-size:56px; font-weight:700; letter-spacing:-0.03em; color:#00D4AA; line-height:1; margin-bottom:16px; font-variant-numeric:tabular-nums; }
+.stat .line { font-size:15px; color:#F0F0F0; line-height:22px; font-weight:500; }
+.stat .src { font-size:11px; color:#6A6A78; margin-top:14px; text-transform:uppercase; letter-spacing:0.08em; }

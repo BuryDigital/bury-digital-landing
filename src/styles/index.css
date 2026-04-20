@@ -1,0 +1,24 @@
+/* Design tokens + base element styles (loaded first) */
+@import './tokens.css';
+
+/* Global page defaults — these override tokens.css where rules collide,
+   preserving the original inline-<style>-wins-over-linked-stylesheet cascade. */
+@import './base.css';
+@import './buttons.css';
+@import './sections.css';
+@import './utilities.css';
+
+/* Section-specific styles */
+@import './nav.css';
+@import './hero.css';
+@import './ticker.css';
+@import './how-it-works.css';
+@import './interactive-demo.css';
+@import './features.css';
+@import './stats.css';
+@import './pricing.css';
+@import './partner.css';
+@import './faq.css';
+@import './contact.css';
+@import './coming-soon.css';
+@import './footer.css';

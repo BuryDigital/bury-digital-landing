@@ -1,0 +1,9 @@
+.faq-list { max-width:800px; margin:0 auto; }
+.faq-item { border-bottom:1px solid #2A2A35; }
+.faq-q { display:flex; justify-content:space-between; align-items:center; padding:22px 0; cursor:pointer; transition: color 150ms; background:transparent; border:0; color:inherit; font:inherit; width:100%; text-align:left; }
+.faq-q:focus-visible { outline: 2px solid #00D4AA; outline-offset: -2px; }
+.faq-q span { font-size:16px; color:#F0F0F0; font-weight:500; letter-spacing:-0.01em; }
+.faq-q svg { stroke:#6A6A78; transition: transform 200ms ease-out, stroke 150ms; flex:none; margin-left:16px; }
+.faq-item.open .faq-q svg { transform: rotate(45deg); stroke:#00D4AA; }
+.faq-a { padding:0 0 22px; font-size:14px; color:#8A8A9A; line-height:22px; display:none; max-width:85%; }
+.faq-item.open .faq-a { display:block; }

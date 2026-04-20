@@ -22,3 +22,7 @@
 @import './contact.css';
 @import './coming-soon.css';
 @import './footer.css';
+
+/* Standalone pages */
+@import './legal.css';
+@import './security.css';

@@ -1,0 +1,27 @@
+.sec-hero { padding: 96px 0 56px; text-align: center; }
+.sec-hero .wrap { max-width: 760px; }
+.sec-hero .eb-text { margin-bottom: 16px; }
+.sec-hero h1 { font-size: 52px; line-height: 1.1; letter-spacing: -0.03em; font-weight: 600; margin: 0; text-wrap: balance; }
+.sec-hero p { color: #8A8A9A; font-size: 18px; line-height: 28px; margin: 20px auto 0; max-width: 620px; text-wrap: pretty; }
+
+.sec-grid { padding: 40px 0 120px; }
+.sec-cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+.sec-card { background: #13131A; border: 1px solid #2A2A35; border-radius: 14px; padding: 28px; transition: border-color 150ms ease, transform 150ms ease; }
+.sec-card:hover { border-color: #3A3A48; }
+.sec-card .sec-ic { width: 44px; height: 44px; border-radius: 12px; background: rgba(0, 212, 170, 0.12); color: #00D4AA; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; }
+.sec-card .sec-ic svg { width: 22px; height: 22px; }
+.sec-card h3 { font-size: 18px; line-height: 1.3; letter-spacing: -0.01em; font-weight: 600; margin: 0 0 10px; color: #F0F0F0; }
+.sec-card p { font-size: 14px; line-height: 22px; color: #8A8A9A; margin: 0; }
+
+.sec-footer { background: #13131A; border: 1px solid #2A2A35; border-radius: 14px; padding: 36px; margin-top: 40px; text-align: center; }
+.sec-footer h3 { font-size: 22px; line-height: 1.3; letter-spacing: -0.015em; font-weight: 600; margin: 0 0 10px; color: #F0F0F0; }
+.sec-footer p { font-size: 15px; line-height: 24px; color: #8A8A9A; margin: 0 0 20px; }
+.sec-footer .btn { margin: 0; }
+
+@media (max-width: 760px) {
+  .sec-hero { padding: 64px 0 40px; }
+  .sec-hero h1 { font-size: 36px; }
+  .sec-hero p { font-size: 16px; }
+  .sec-cards { grid-template-columns: 1fr; }
+  .sec-grid { padding: 24px 0 80px; }
+}

@@ -75,5 +75,13 @@ export default defineConfig({
     emptyOutDir: true,
     cssMinify: true,
     minify: 'esbuild',
+    rollupOptions: {
+      input: {
+        main: resolvePath('./index.html'),
+        privacy: resolvePath('./privacy.html'),
+        terms: resolvePath('./terms.html'),
+        security: resolvePath('./security.html'),
+      },
+    },
   },
 });

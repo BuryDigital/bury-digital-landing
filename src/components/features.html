@@ -7,18 +7,35 @@
     <div class="feat-list">
       <div class="feat-card">
         <div>
-          <div class="feat-eb">Real-estate-specific AI</div>
+          <div class="feat-eb">Built around your industry</div>
           <h3>It asks the right questions for every enquiry.</h3>
-          <p>Every call gets a playbook built for agents — buyers get asked about finance and preferred suburbs; sellers about timing and expected price; appraisal enquiries about property details. Not generic. Not robotic.</p>
+          <p>Every business gets a qualification playbook built for how they work. A dental practice gets asked about treatment type and health fund. A real estate agent gets asked about buying, selling, or appraisal. A tradie gets asked about the job, suburb, and urgency. Not generic. Not robotic. Yours.</p>
         </div>
         <div class="feat-viz">
-          <div class="chip-row" style="margin-bottom:12px;">
-            <div class="chip active">Seller</div><div class="chip">Buyer</div><div class="chip">Appraisal</div><div class="chip">Rental</div>
+          <div class="chip-row" style="margin-bottom:12px;" id="feat-tabs">
+            <button class="chip active" data-feat="realestate">Real Estate</button><button class="chip" data-feat="dental">Dental</button><button class="chip" data-feat="trades">Trades</button><button class="chip" data-feat="legal">Legal</button>
           </div>
           <div style="background:#13131A; border:1px solid #2A2A35; border-radius:10px; padding:12px; font-size:12px; color:#8A8A9A; line-height:18px; display:flex; flex-direction:column; gap:8px;">
-            <div><span style="color:#00D4AA; font-weight:500;">Q1.</span> Are you looking to buy, sell, or just get an appraisal?</div>
-            <div><span style="color:#00D4AA; font-weight:500;">Q2.</span> What suburb is the property in?</div>
-            <div><span style="color:#00D4AA; font-weight:500;">Q3.</span> Are you hoping to list soon or exploring options?</div>
+            <div id="feat-qs-realestate">
+              <div style="margin-bottom:8px;"><span style="color:#00D4AA; font-weight:500;">Q1.</span> Are you looking to buy, sell, or just get an appraisal?</div>
+              <div style="margin-bottom:8px;"><span style="color:#00D4AA; font-weight:500;">Q2.</span> What suburb is the property in?</div>
+              <div><span style="color:#00D4AA; font-weight:500;">Q3.</span> Are you hoping to list soon or still exploring options?</div>
+            </div>
+            <div id="feat-qs-dental" hidden>
+              <div style="margin-bottom:8px;"><span style="color:#00D4AA; font-weight:500;">Q1.</span> Are you a new or existing patient?</div>
+              <div style="margin-bottom:8px;"><span style="color:#00D4AA; font-weight:500;">Q2.</span> What treatment are you enquiring about?</div>
+              <div><span style="color:#00D4AA; font-weight:500;">Q3.</span> Do you have private health cover?</div>
+            </div>
+            <div id="feat-qs-trades" hidden>
+              <div style="margin-bottom:8px;"><span style="color:#00D4AA; font-weight:500;">Q1.</span> What's the job — repair, installation, or quote?</div>
+              <div style="margin-bottom:8px;"><span style="color:#00D4AA; font-weight:500;">Q2.</span> What suburb is the property?</div>
+              <div><span style="color:#00D4AA; font-weight:500;">Q3.</span> How urgent is it?</div>
+            </div>
+            <div id="feat-qs-legal" hidden>
+              <div style="margin-bottom:8px;"><span style="color:#00D4AA; font-weight:500;">Q1.</span> What area of law is your matter?</div>
+              <div style="margin-bottom:8px;"><span style="color:#00D4AA; font-weight:500;">Q2.</span> Are you an existing client or a new enquiry?</div>
+              <div><span style="color:#00D4AA; font-weight:500;">Q3.</span> Do you have a court or response date coming up?</div>
+            </div>
           </div>
         </div>
       </div>
@@ -27,12 +44,12 @@
         <div>
           <div class="feat-eb">Lead hub</div>
           <h3>Every enquiry in one place, sorted by what matters.</h3>
-          <p>Names, numbers, buyer or seller, suburb, timing, finance status, estimated commission, full SMS thread. Sort by hot. Skip the noise. Know exactly who to call first.</p>
+          <p>Names, numbers, intent, timing, priority score, full SMS thread. Sort by hot. Skip the noise. Know exactly who to follow up first.</p>
         </div>
         <div class="feat-viz">
-          <div class="hub-row"><div class="av-s" style="background:hsl(265 40% 18%); color:hsl(265 60% 72%);">AR</div><div class="nm">Alex R. · Listing appt</div><div class="vl">$14,400</div></div>
-          <div class="hub-row"><div class="av-s" style="background:hsl(210 40% 18%); color:hsl(210 60% 72%);">PN</div><div class="nm">Priya N. · Buyer inspection</div><div class="vl">$28,500</div></div>
-          <div class="hub-row"><div class="av-s" style="background:hsl(140 40% 18%); color:hsl(140 60% 72%);">TG</div><div class="nm">Tom G. · Rental listing</div><div class="vl">$2,880/yr</div></div>
+          <div class="hub-row"><div class="av-s" style="background:hsl(265 40% 18%); color:hsl(265 60% 72%);">AR</div><div class="nm">Alex R. · Seller appraisal</div><div class="vl">Hot</div></div>
+          <div class="hub-row"><div class="av-s" style="background:hsl(210 40% 18%); color:hsl(210 60% 72%);">JT</div><div class="nm">Jamie T. · New patient enquiry</div><div class="vl">High</div></div>
+          <div class="hub-row"><div class="av-s" style="background:hsl(35 40% 18%); color:hsl(35 60% 72%);">MW</div><div class="nm">Marcus W. · Urgent repair</div><div class="vl">Urgent</div></div>
         </div>
       </div>
 
@@ -40,18 +57,18 @@
         <div>
           <div class="feat-eb">SMS notifications</div>
           <h3>A text the moment a qualified enquiry lands.</h3>
-          <p>You're mid-inspection. Your phone buzzes. One glance tells you whether to step outside to call back now or finish the walkthrough first. No app needed to see what's hot.</p>
+          <p>You're with a client. Your phone buzzes. One glance tells you whether to step out and call back now or finish what you're doing. No app needed to see what's hot.</p>
         </div>
         <div class="feat-viz">
           <div class="notif">
             <div class="ic"><!-- @include: icons/chat-bubble.html --></div>
-            <div style="flex:1"><div class="t1">New qualified enquiry · Balmain</div><div class="t2">Alex R. — seller appraisal, spring timing, est. $14.4k. Tap to view.</div></div>
+            <div style="flex:1"><div class="t1">New qualified enquiry · high priority</div><div class="t2">Alex R. — seller appraisal, spring timing. Tap to view.</div></div>
             <div class="time">Now</div>
           </div>
           <div style="height:8px"></div>
           <div class="notif">
             <div class="ic" style="background:rgba(163,230,53,0.14); color:#A3E635;"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 6 9 17l-5-5"/></svg></div>
-            <div style="flex:1"><div class="t1">Inspection booked · Priya N.</div><div class="t2">Sat 11am — 12 Campbell St. Added to your calendar.</div></div>
+            <div style="flex:1"><div class="t1">Appointment confirmed · Jamie T.</div><div class="t2">Tue 3pm — new patient checkup. Added to your calendar.</div></div>
             <div class="time">2m</div>
           </div>
         </div>

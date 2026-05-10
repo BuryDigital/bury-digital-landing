@@ -62,5 +62,5 @@ export function initInteractiveDemo() {
     select(button.dataset.ind);
   });
 
-  select('seller');
+  select('realestate');
 }

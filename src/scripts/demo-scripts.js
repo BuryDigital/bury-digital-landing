@@ -1,7 +1,7 @@
-// Real-estate-specific SMS threads + lead summaries shown in the interactive demo.
+// SMS threads + lead summaries shown in the interactive demo.
 // Each key matches the `data-ind` attribute on the tab button.
 export const DEMO_SCRIPTS = {
-  seller: {
+  realestate: {
     biz: 'Harbourline Properties', name: 'Alex Romano', phone: '0424 100 872', suburb: 'Balmain NSW',
     thread: [
       ['ai', "Hi Alex — Harbourline Properties, sorry we missed your call. How can we help?"],
@@ -15,97 +15,78 @@ export const DEMO_SCRIPTS = {
     summary: [
       ['Intent', 'Listing presentation'], ['Timing', 'Spring 2026', 'hot'],
       ['Suburb', 'Balmain'], ['Property', '2-bed apartment'],
-      ['Est. commission', '$14,400', 'green'], ['Next step', 'Book listing appt'],
+      ['Priority', 'High', 'green'], ['Next step', 'Book listing appt'],
     ],
   },
-  buyer: {
-    biz: 'Harbourline Properties', name: 'Priya Natarajan', phone: '0422 901 377', suburb: 'Bondi',
+  dental: {
+    biz: 'Bayside Dental', name: 'Jamie Thornton', phone: '0411 882 543', suburb: 'St Kilda',
     thread: [
-      ['ai', "Hi Priya — Harbourline Properties, sorry we missed you. Are you buying, selling, or after an appraisal?"],
-      ['them', "Buying. Saw the Campbell St listing online"],
-      ['ai', "Nice — after an inspection time, or more details on the listing?"],
-      ['them', "Want to book an inspection, and I've got finance pre-approved"],
-      ['ai', "Great — is a private viewing this Saturday morning OK, or would the open home suit?"],
-      ['them', "Private Saturday works. Around 11?"],
-      ['ai', "Done. I'll send a confirmation with the address shortly."],
+      ['ai', "Hi Jamie — Bayside Dental, sorry we missed your call. Are you a new or existing patient?"],
+      ['them', "New patient. Need a general checkup and clean"],
+      ['ai', "Great — do you have private health cover?"],
+      ['them', "Yes, with Bupa"],
+      ['ai', "Perfect. Are mornings or afternoons better for you?"],
+      ['them', "Afternoons, ideally this week or next"],
+      ['ai', "Got it. I'll have our reception confirm a time shortly."],
     ],
     summary: [
-      ['Intent', 'Buyer · private inspection'], ['Listing', '12 Campbell St'],
-      ['Finance', 'Pre-approved', 'green'], ['Suburb', 'Bondi'],
-      ['Timing', 'Saturday 11am', 'hot'], ['Next step', 'Confirm inspection'],
+      ['Intent', 'New patient · checkup & clean'], ['Health fund', 'Bupa', 'green'],
+      ['Preferred time', 'Afternoons'], ['Availability', 'This week / next', 'hot'],
+      ['Priority', 'High', 'green'], ['Next step', 'Book appointment'],
     ],
   },
-  appraisal: {
-    biz: 'Harbourline Properties', name: 'Sarah Chen', phone: '0401 552 089', suburb: 'Coogee',
+  trades: {
+    biz: 'Apex Plumbing & Gas', name: 'Marcus Webb', phone: '0432 671 904', suburb: 'Footscray',
     thread: [
-      ['ai', "Hi Sarah — Harbourline Properties, sorry we missed you. What are you after?"],
-      ['them', "Want a free appraisal on my townhouse"],
-      ['ai', "Happy to help. What suburb, and roughly when were you thinking of selling?"],
-      ['them', "Coogee. Maybe later this year, depends on the price"],
-      ['ai', "Got it. How many beds/baths, and any recent updates?"],
-      ['them', "3-bed, 2-bath. New kitchen last year"],
-      ['ai', "Perfect. I'll book an agent to pop by this week for an on-site appraisal."],
+      ['ai', "Hi Marcus — Apex Plumbing, sorry we missed your call. What's the job?"],
+      ['them', "Got a burst pipe under the kitchen sink. Pretty urgent"],
+      ['ai', "On it. What suburb are you in?"],
+      ['them', "Footscray"],
+      ['ai', "Got it — are you home now, or what's the best time for someone to come?"],
+      ['them', "Home all afternoon"],
+      ['ai', "Perfect. I'll get a plumber to you within the hour."],
     ],
     summary: [
-      ['Intent', 'Market appraisal'], ['Suburb', 'Coogee'],
-      ['Property', '3-bed townhouse'], ['Recent updates', 'New kitchen'],
-      ['Timing', 'Later 2026', 'hot'], ['Next step', 'On-site appraisal'],
+      ['Intent', 'Burst pipe · urgent repair'], ['Suburb', 'Footscray'],
+      ['Availability', 'Home all afternoon', 'hot'], ['Urgency', 'Immediate', 'hot'],
+      ['Priority', 'High', 'green'], ['Next step', 'Dispatch technician'],
     ],
   },
-  openhome: {
-    biz: 'Harbourline Properties', name: 'Jane Morley', phone: '0419 552 311', suburb: 'Surry Hills',
+  allied: {
+    biz: 'Parkside Physio', name: 'Chloe Ngu', phone: '0408 215 763', suburb: 'Richmond',
     thread: [
-      ['ai', "Hi Jane — Harbourline Properties, sorry we missed you. Are you calling about an open home?"],
-      ['them', "Yes — the Bourke St apartment this Saturday"],
-      ['ai', "It's running 11:30am–12pm. Want me to hold a spot for you?"],
-      ['them', "Yes please. Running about 15 mins late"],
-      ['ai', "No worries — agent will be onsite til 12:15 for you."],
-      ['them', "Also, is the price negotiable?"],
-      ['ai', "Best to chat with the agent on the day — I'll flag your interest."],
+      ['ai', "Hi Chloe — Parkside Physio, sorry we missed you. Are you an existing patient or new?"],
+      ['them', "New patient. Got lower back pain, been going on for a week"],
+      ['ai', "Got it. Do you have a referral from your GP, or self-referring?"],
+      ['them', "Self-referring, no referral"],
+      ['ai', "No problem. Do you have private health cover for physio?"],
+      ['them', "Yes, Medibank"],
+      ['ai', "Great — I'll have our team book you in for an initial assessment."],
     ],
     summary: [
-      ['Intent', 'Open home attendee'], ['Listing', '14 Bourke St'],
-      ['Suburb', 'Surry Hills'], ['Timing', 'Sat 11:45am', 'hot'],
-      ['Buyer signal', 'Price question', 'green'], ['Next step', 'Brief agent onsite'],
+      ['Intent', 'New patient · lower back pain'], ['Referral', 'Self-referring'],
+      ['Health fund', 'Medibank', 'green'], ['Duration', '1 week'],
+      ['Priority', 'High', 'green'], ['Next step', 'Book initial assessment'],
     ],
   },
-  rental: {
-    biz: 'Harbourline Properties', name: 'Tom Grady', phone: '0418 664 512', suburb: 'Clovelly',
+  legal: {
+    biz: 'Lander & Co Lawyers', name: 'Dani Osei', phone: '0425 330 617', suburb: 'Melbourne CBD',
     thread: [
-      ['ai', "Hey Tom — Harbourline Properties, sorry we missed your call. Rental enquiry?"],
-      ['them', "Yeah, got an investment property I want to lease out"],
-      ['ai', "Great. Is it vacant now, or tenant leaving soon?"],
-      ['them', "Tenant out next month"],
-      ['ai', "Got it. Any updates planned, or ready to list as-is?"],
-      ['them', "Fresh paint, otherwise as-is"],
-      ['ai', "Perfect. We'll book a rental appraisal this week."],
+      ['ai', "Hi Dani — Lander & Co, sorry we missed your call. What area of law can we help with?"],
+      ['them', "Family law. Going through a separation and need advice"],
+      ['ai', "Understood. Are you an existing client, or is this your first time contacting us?"],
+      ['them', "First time. Things are getting urgent — court date in three weeks"],
+      ['ai', "Got it. I'll flag this as urgent and have a solicitor call you back today."],
     ],
     summary: [
-      ['Intent', 'List rental'], ['Suburb', 'Clovelly'],
-      ['Property', 'Investment · 2-bed'], ['Available', 'Next month', 'hot'],
-      ['Est. mgmt fee', '$2,880 / yr', 'green'], ['Next step', 'Rental appraisal'],
-    ],
-  },
-  listing: {
-    biz: 'Harbourline Properties', name: 'Hannah Wu', phone: '0431 008 290', suburb: 'Waverley',
-    thread: [
-      ['ai', "Hi Hannah — Harbourline Properties, sorry we missed your call. What's going on?"],
-      ['them', "We've had two agents out already. Want a third opinion"],
-      ['ai', "Happy to help. What have you been quoted, and when do you want to list?"],
-      ['them', "$2.1–2.3m range. Ideally on market in six weeks"],
-      ['ai', "Got it. Full listing presentation with comparable sales — mornings or afternoons?"],
-      ['them', "Wednesday afternoon if possible"],
-      ['ai', "Locked in. I'll send the meeting invite and a prep email shortly."],
-    ],
-    summary: [
-      ['Intent', 'Listing presentation'], ['Prior quotes', '$2.1–2.3m'],
-      ['Timing', 'On market in 6 wks', 'hot'], ['Suburb', 'Waverley'],
-      ['Est. commission', '$44,000', 'green'], ['Booking', 'Wed afternoon'],
+      ['Intent', 'Family law · separation'], ['Status', 'New client'],
+      ['Urgency', 'Court date in 3 weeks', 'hot'], ['Suburb', 'Melbourne CBD'],
+      ['Priority', 'High', 'green'], ['Next step', 'Solicitor callback today'],
     ],
   },
 };
 
 // Hue per scenario, used to tint the avatar circle in the summary pane.
 export const INDUSTRY_HUES = {
-  seller: 265, buyer: 210, appraisal: 170, openhome: 35, rental: 140, listing: 320,
+  realestate: 265, dental: 210, trades: 35, allied: 140, legal: 320,
 };

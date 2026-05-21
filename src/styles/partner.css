@@ -34,3 +34,10 @@ input[type=range] { flex:1; accent-color:#A3E635; }
 .calc-result .annual { font-size:12px; color:#6A6A78; margin-top:8px; font-variant-numeric:tabular-nums; }
 
 .partner-ctas { display:flex; gap:12px; justify-content:center; margin-top:32px; flex-wrap:wrap; }
+
+/* One-line band on the main page that links to /partners.html */
+.partner-band { padding:28px 0; background:#0D0D13; border-top:1px solid #2A2A35; border-bottom:1px solid #2A2A35; }
+.partner-band p { text-align:center; margin:0; color:#8A8A9A; font-size:15px; line-height:24px; }
+.partner-band a { color:#A3E635; font-weight:500; text-decoration:none; margin-left:6px; white-space:nowrap; }
+.partner-band a:hover { text-decoration:underline; }
+@media (max-width:560px){ .partner-band { padding:24px 0; } .partner-band p { font-size:14px; line-height:22px; } }

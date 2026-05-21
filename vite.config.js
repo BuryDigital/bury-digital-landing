@@ -78,6 +78,7 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: resolvePath('./index.html'),
+        partners: resolvePath('./partners.html'),
         privacy: resolvePath('./privacy.html'),
         terms: resolvePath('./terms.html'),
         security: resolvePath('./security.html'),

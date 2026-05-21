@@ -1,0 +1,6 @@
+.lead-hub-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+@media (max-width:860px){ .lead-hub-grid { grid-template-columns:1fr; } }
+.lead-hub-card { background:#13131A; border:1px solid #2A2A35; border-radius:14px; padding:28px; }
+.lead-hub-card .ic { width:40px; height:40px; border-radius:10px; background:rgba(0,212,170,0.12); border:1px solid rgba(0,212,170,0.25); color:#00D4AA; display:flex; align-items:center; justify-content:center; margin-bottom:16px; }
+.lead-hub-card h3 { font-size:17px; font-weight:600; margin:0 0 10px; color:#F0F0F0; letter-spacing:-0.01em; }
+.lead-hub-card p { font-size:14px; color:#8A8A9A; margin:0; line-height:21px; }

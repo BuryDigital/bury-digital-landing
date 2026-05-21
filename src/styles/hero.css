@@ -8,7 +8,9 @@
 h1.display { font-size:60px; line-height:1.05; letter-spacing:-0.03em; font-weight:600; margin:0; max-width:14ch; }
 h1.display em { font-style:normal; color:#00D4AA; }
 .hero-sub { color:#8A8A9A; font-size:17px; line-height:26px; margin:24px 0 0; max-width:48ch; }
-.hero-ctas { display:flex; gap:12px; margin-top:32px; flex-wrap:wrap; }
+.hero-ctas { display:flex; gap:16px; margin-top:32px; flex-wrap:wrap; align-items:center; }
+.hero-trial-link { color:#8A8A9A; font-size:14px; font-weight:500; text-decoration:none; border-bottom:1px solid #2A2A35; padding-bottom:2px; transition: color 150ms, border-color 150ms; }
+.hero-trial-link:hover { color:#00D4AA; border-color:#00D4AA; }
 .hero-fine { margin-top:14px; font-size:12px; color:#6A6A78; }
 @media (max-width: 560px) { h1.display { font-size:42px; } }
 

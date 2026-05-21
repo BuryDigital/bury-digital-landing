@@ -6,8 +6,8 @@
 .contact-name { font-size:15px; font-weight:600; color:#F0F0F0; }
 .contact-role { font-size:12px; color:#8A8A9A; margin-top:2px; }
 
-.contact-grid { display:grid; grid-template-columns:repeat(3, 1fr); gap:16px; max-width:1080px; margin:0 auto; }
-@media (max-width:880px) { .contact-grid { grid-template-columns:1fr; } }
+.contact-grid { display:grid; grid-template-columns:repeat(2, 1fr); gap:16px; max-width:720px; margin:0 auto; }
+@media (max-width:640px) { .contact-grid { grid-template-columns:1fr; } }
 
 .contact-card { display:flex; flex-direction:column; gap:8px; background:#13131A; border:1px solid #2A2A35; border-radius:16px; padding:28px; text-decoration:none; color:inherit; transition:border-color 150ms, background 150ms, transform 120ms; }
 .contact-card:hover { border-color:#3A3A48; background:#161620; transform:translateY(-2px); }

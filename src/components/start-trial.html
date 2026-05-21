@@ -26,14 +26,46 @@
         <div class="field">
           <label for="tf-industry">Industry <span class="req" aria-hidden="true">*</span></label>
           <select id="tf-industry" name="industry" required>
-            <option value="" disabled selected>Select an industry</option>
-            <option>Real Estate</option>
-            <option>Dental</option>
-            <option>Allied Health</option>
-            <option>Legal</option>
-            <option>Trades</option>
-            <option>Other</option>
+            <option value="" disabled selected>Select your industry</option>
+            <optgroup label="Professional Services">
+              <option value="Real Estate">Real Estate</option>
+              <option value="Property Management">Property Management</option>
+              <option value="Legal">Legal</option>
+              <option value="Accounting / Bookkeeping">Accounting / Bookkeeping</option>
+              <option value="Financial Services / Mortgage Broking">Financial Services / Mortgage Broking</option>
+              <option value="Insurance">Insurance</option>
+              <option value="IT Services">IT Services</option>
+              <option value="Marketing / Creative Agency">Marketing / Creative Agency</option>
+            </optgroup>
+            <optgroup label="Health">
+              <option value="Dental">Dental</option>
+              <option value="Medical / GP Clinic">Medical / GP Clinic</option>
+              <option value="Allied Health (Physio, Chiro, Psych, Podiatry)">Allied Health (Physio, Chiro, Psych, Podiatry)</option>
+              <option value="Veterinary">Veterinary</option>
+            </optgroup>
+            <optgroup label="Trades">
+              <option value="Plumbing">Plumbing</option>
+              <option value="Electrical">Electrical</option>
+              <option value="Building / Construction">Building / Construction</option>
+              <option value="HVAC / Air Conditioning">HVAC / Air Conditioning</option>
+              <option value="Landscaping / Gardening">Landscaping / Gardening</option>
+              <option value="Pest Control">Pest Control</option>
+              <option value="Locksmith">Locksmith</option>
+            </optgroup>
+            <optgroup label="Home &amp; Personal Services">
+              <option value="Cleaning Services">Cleaning Services</option>
+              <option value="Automotive / Mechanic">Automotive / Mechanic</option>
+              <option value="Beauty / Salon / Spa">Beauty / Salon / Spa</option>
+              <option value="Fitness / Personal Training">Fitness / Personal Training</option>
+              <option value="Removalists">Removalists</option>
+            </optgroup>
+            <option value="Other">Other</option>
           </select>
+        </div>
+
+        <div class="field" id="tf-industry-other-wrapper" hidden>
+          <label for="tf-industry-other">What type of business? <span class="req" aria-hidden="true">*</span></label>
+          <input id="tf-industry-other" name="industry_other" type="text" placeholder="e.g. event hire, funeral services, childcare" />
         </div>
 
         <div class="field">

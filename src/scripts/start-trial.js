@@ -9,12 +9,30 @@ export function initStartTrial() {
   const errorEl = document.getElementById('trial-error');
   const formCard = document.getElementById('trial-form-card');
   const successEl = document.getElementById('trial-success');
+  const industrySelect = document.getElementById('tf-industry');
+  const otherWrapper = document.getElementById('tf-industry-other-wrapper');
+  const otherInput = document.getElementById('tf-industry-other');
 
   const showSuccess = () => {
     formCard.hidden = true;
     successEl.hidden = false;
     successEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
   };
+
+  // Show/hide the "What type of business?" field based on industry selection.
+  // Native `required` toggling lets the existing form.checkValidity() path
+  // catch an empty value with the same browser-provided error styling.
+  industrySelect.addEventListener('change', () => {
+    if (industrySelect.value === 'Other') {
+      otherWrapper.hidden = false;
+      otherInput.required = true;
+      otherInput.focus();
+    } else {
+      otherWrapper.hidden = true;
+      otherInput.required = false;
+      otherInput.value = '';
+    }
+  });
 
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
@@ -47,6 +65,9 @@ export function initStartTrial() {
       notes: data.notes || '',
       submitted_at: new Date().toISOString(),
     };
+    if (data.industry === 'Other' && data.industry_other) {
+      payload.industry_other = data.industry_other;
+    }
 
     try {
       const res = await fetch(WEBHOOK_URL, {

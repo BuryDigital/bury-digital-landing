@@ -12,6 +12,7 @@
 .trial-form-card input[type=text],
 .trial-form-card input[type=email],
 .trial-form-card input[type=tel],
+.trial-form-card input[type=number],
 .trial-form-card select,
 .trial-form-card textarea {
   font-family:Inter, system-ui, sans-serif;
@@ -35,6 +36,23 @@
 .trial-form-card textarea:focus { outline:none; border-color:#00D4AA; box-shadow:0 0 0 3px rgba(0,212,170,0.18); }
 .trial-form-card textarea { resize:vertical; min-height:84px; }
 
+/* Chrome/Safari autofill defaults to a white/yellow background and a dark
+   text colour; the inset box-shadow trick is the only reliable override.
+   The long transition delay prevents the yellow flash on autofill. */
+.trial-form-card input:-webkit-autofill,
+.trial-form-card input:-webkit-autofill:hover,
+.trial-form-card input:-webkit-autofill:focus,
+.trial-form-card input:-webkit-autofill:active,
+.trial-form-card textarea:-webkit-autofill,
+.trial-form-card textarea:-webkit-autofill:hover,
+.trial-form-card textarea:-webkit-autofill:focus,
+.trial-form-card select:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px #0F0F15 inset !important;
+  -webkit-text-fill-color: #F0F0F0 !important;
+  caret-color: #F0F0F0 !important;
+  transition: background-color 9999s ease-in-out 0s;
+}
+
 /* Native select chevron, restyled */
 .trial-form-card select {
   appearance:none; -webkit-appearance:none;
@@ -46,7 +64,10 @@
 .trial-form-card select:focus {
   background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2300D4AA' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><polyline points='6 9 12 15 18 9'/></svg>");
 }
-.trial-form-card select option { background:#13131A; color:#F0F0F0; }
+/* Native select-popup styling — Firefox honours these fully; Chrome/Safari
+   apply them on macOS but ignore most styling on the native popup. */
+.trial-form-card select option { background:#0F0F15; color:#F0F0F0; }
+.trial-form-card select optgroup { color:#8A8A9A; font-weight:600; font-style:normal; background:#0F0F15; }
 
 .trial-form-card .trial-submit { width:100%; }
 .trial-form-card .trial-submit[disabled] { opacity:0.6; cursor:not-allowed; }

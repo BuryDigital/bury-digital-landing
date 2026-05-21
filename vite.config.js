@@ -48,7 +48,9 @@ function htmlMinify() {
           collapseWhitespace: true,
           conservativeCollapse: false,
           removeComments: true,
-          removeRedundantAttributes: true,
+          // Keep type="text" etc. on form inputs so attribute-based CSS
+          // selectors (input[type="text"]) continue to match after build.
+          removeRedundantAttributes: false,
           removeScriptTypeAttributes: true,
           removeStyleLinkTypeAttributes: true,
           useShortDoctype: true,

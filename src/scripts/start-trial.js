@@ -1,5 +1,4 @@
-// Replace N8N_WEBHOOK_URL_PLACEHOLDER with the production n8n webhook URL before deploying.
-const WEBHOOK_URL = 'N8N_WEBHOOK_URL_PLACEHOLDER';
+const WEBHOOK_URL = 'https://ocbury.app.n8n.cloud/webhook/trial-signup';
 
 export function initStartTrial() {
   const form = document.getElementById('trial-form');

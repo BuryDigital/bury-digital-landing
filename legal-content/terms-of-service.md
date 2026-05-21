@@ -169,11 +169,11 @@ Before commencing legal proceedings (other than for urgent interlocutory relief)
 - **No waiver.** Failure to enforce a provision is not a waiver of the right to enforce it later.
 - **Severability.** If any provision is found unenforceable, the rest of the Terms remain in effect.
 - **Entire agreement.** These Terms, together with the Privacy Policy, AUP, and (where applicable) DPA, are the entire agreement between the parties.
-- **Notices.** Notices to you may be sent by email to the address on your account. Notices to us should be sent to legal@bury-digital.com.
+- **Notices.** Notices to you may be sent by email to the address on your account. Notices to us should be sent to oscar@bury.com.au.
 
 ## 19. Contact
 
 Bury Digital Pty Ltd
 ABN 31 850 554 300
 [REGISTERED OFFICE ADDRESS], Melbourne VIC
-Email: legal@bury-digital.com
+Email: oscar@bury.com.au

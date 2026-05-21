@@ -21,16 +21,9 @@ Search-and-replace these across all files:
 - `[REGISTERED OFFICE ADDRESS]` → Bury Digital Pty Ltd's registered office (check ASIC if unsure — your tax invoice should also have it)
 - `[VERIFY PAYMENT PROCESSOR — e.g. Stripe Payments Australia Pty Ltd]` (in `subprocessors.md`) → whatever payment processor you actually use
 
-## Email addresses referenced
+## Email address
 
-The documents reference these email addresses. Set them up as aliases that forward to your main inbox:
-
-- `privacy@bury-digital.com`
-- `legal@bury-digital.com`
-- `security@bury-digital.com`
-- `abuse@bury-digital.com`
-
-If you don't want four aliases, change them all to a single address (e.g. your existing one) via search-and-replace before generating HTML.
+All contact email references in the documents currently point to `oscar@bury.com.au` (the founder's address). If you later split out aliases (`privacy@`, `legal@`, `security@`, `abuse@`) for category routing, search-and-replace `oscar@bury.com.au` in the relevant `.md` files and re-run `tools/md-to-legal.mjs`.
 
 ## Important to verify
 

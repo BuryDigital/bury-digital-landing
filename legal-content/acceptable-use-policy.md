@@ -82,7 +82,7 @@ The Service uses AI to qualify End User enquiries. You acknowledge that:
 
 ## 8. Reporting violations
 
-If you become aware of a violation of this AUP, please report it to abuse@bury-digital.com.
+If you become aware of a violation of this AUP, please report it to oscar@bury.com.au.
 
 ## 9. Enforcement
 

@@ -50,12 +50,12 @@ Security is shared. To help keep your data safe:
 
 - Use a strong, unique password for your Bury Digital account
 - Do not share account credentials
-- Notify us immediately at security@bury-digital.com if you suspect unauthorised access
+- Notify us immediately at oscar@bury.com.au if you suspect unauthorised access
 - Keep your contact details current so we can reach you about security matters
 
 ## Reporting a vulnerability
 
-If you believe you have found a security vulnerability in the Service, please email security@bury-digital.com with details. We commit to:
+If you believe you have found a security vulnerability in the Service, please email oscar@bury.com.au with details. We commit to:
 
 - Acknowledging your report within 3 business days
 - Investigating and responding promptly
@@ -63,4 +63,4 @@ If you believe you have found a security vulnerability in the Service, please em
 
 ## Contact
 
-Questions about security? Email security@bury-digital.com.
+Questions about security? Email oscar@bury.com.au.

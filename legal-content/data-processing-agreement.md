@@ -102,4 +102,4 @@ This DPA is governed by the laws of Victoria, Australia.
 
 ## 13. Contact
 
-For questions about this DPA, or to formally invoke it (e.g. by signing a counter-signed copy for your records), email legal@bury-digital.com.
+For questions about this DPA, or to formally invoke it (e.g. by signing a counter-signed copy for your records), email oscar@bury.com.au.

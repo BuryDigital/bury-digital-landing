@@ -33,4 +33,4 @@ If you object to a new subprocessor on reasonable grounds related to data protec
 
 ## Contact
 
-Questions about our subprocessors? Email privacy@bury-digital.com.
+Questions about our subprocessors? Email oscar@bury.com.au.

@@ -154,7 +154,7 @@ The Service is intended for use by Australian businesses, not by individuals und
 
 For privacy questions, requests, or complaints:
 
-- Email: privacy@bury-digital.com
+- Email: oscar@bury.com.au
 - Post: Bury Digital Pty Ltd, [REGISTERED OFFICE ADDRESS], Melbourne VIC
 
 ## 14. Changes to this policy

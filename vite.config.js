@@ -79,6 +79,7 @@ export default defineConfig({
       input: {
         main: resolvePath('./index.html'),
         partners: resolvePath('./partners.html'),
+        startTrial: resolvePath('./start-trial.html'),
         privacy: resolvePath('./privacy.html'),
         terms: resolvePath('./terms.html'),
         acceptableUse: resolvePath('./acceptable-use.html'),

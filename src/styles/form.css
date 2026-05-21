@@ -9,6 +9,9 @@
 .trial-form-card label .req { color:#00D4AA; margin-left:2px; font-weight:600; }
 .trial-form-card label .opt { color:#6A6A78; font-weight:400; margin-left:4px; }
 
+/* Layout properties for form inputs — colour/border/focus are forced below
+   via the !important block so they survive Chrome autofill, browser
+   defaults, and any other rule that tries to repaint them. */
 .trial-form-card input[type=text],
 .trial-form-card input[type=email],
 .trial-form-card input[type=tel],
@@ -17,41 +20,16 @@
 .trial-form-card textarea {
   font-family:Inter, system-ui, sans-serif;
   font-size:15px;
-  color:#F0F0F0;
-  background:#0F0F15;
-  border:1px solid #2A2A35;
   border-radius:8px;
   padding:12px 14px;
   line-height:22px;
   width:100%;
   transition: border-color 150ms, box-shadow 150ms;
 }
-.trial-form-card input::placeholder,
-.trial-form-card textarea::placeholder { color:#5A5A68; }
 .trial-form-card input:hover,
 .trial-form-card select:hover,
 .trial-form-card textarea:hover { border-color:#3A3A48; }
-.trial-form-card input:focus,
-.trial-form-card select:focus,
-.trial-form-card textarea:focus { outline:none; border-color:#00D4AA; box-shadow:0 0 0 3px rgba(0,212,170,0.18); }
 .trial-form-card textarea { resize:vertical; min-height:84px; }
-
-/* Chrome/Safari autofill defaults to a white/yellow background and a dark
-   text colour; the inset box-shadow trick is the only reliable override.
-   The long transition delay prevents the yellow flash on autofill. */
-.trial-form-card input:-webkit-autofill,
-.trial-form-card input:-webkit-autofill:hover,
-.trial-form-card input:-webkit-autofill:focus,
-.trial-form-card input:-webkit-autofill:active,
-.trial-form-card textarea:-webkit-autofill,
-.trial-form-card textarea:-webkit-autofill:hover,
-.trial-form-card textarea:-webkit-autofill:focus,
-.trial-form-card select:-webkit-autofill {
-  -webkit-box-shadow: 0 0 0 1000px #0F0F15 inset !important;
-  -webkit-text-fill-color: #F0F0F0 !important;
-  caret-color: #F0F0F0 !important;
-  transition: background-color 9999s ease-in-out 0s;
-}
 
 /* Native select chevron, restyled */
 .trial-form-card select {
@@ -66,7 +44,7 @@
 }
 /* Native select-popup styling — Firefox honours these fully; Chrome/Safari
    apply them on macOS but ignore most styling on the native popup. */
-.trial-form-card select option { background:#0F0F15; color:#F0F0F0; }
+.trial-form-card select option { background:#0F0F15; color:#ffffff; }
 .trial-form-card select optgroup { color:#8A8A9A; font-weight:600; font-style:normal; background:#0F0F15; }
 
 .trial-form-card .trial-submit { width:100%; }
@@ -111,3 +89,47 @@
 .trial-success-ic svg { width:28px; height:28px; }
 .trial-success h2 { font-size:22px; font-weight:600; color:#F0F0F0; letter-spacing:-0.01em; margin:0 0 10px; }
 .trial-success p { font-size:15px; color:#8A8A9A; line-height:24px; margin:0; max-width:48ch; margin-left:auto; margin-right:auto; }
+
+/* ============================================================
+   Consistent dark input styling — every type explicitly listed.
+   Forced with !important so Chrome autofill (which fights back
+   even with the :-webkit-autofill override) cannot repaint name,
+   business_name, or any other text input white.
+   ============================================================ */
+form input[type="text"],
+form input[type="email"],
+form input[type="tel"],
+form input[type="number"],
+form select,
+form textarea {
+  background-color: #0F0F15 !important;
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  border: 1px solid #2A2A35 !important;
+}
+
+form input[type="text"]:focus,
+form input[type="email"]:focus,
+form input[type="tel"]:focus,
+form input[type="number"]:focus,
+form select:focus,
+form textarea:focus {
+  outline: none !important;
+  border-color: #00D4AA !important;
+  box-shadow: 0 0 0 3px rgba(0,212,170,0.18) !important;
+}
+
+/* Chrome autofill defence */
+form input:-webkit-autofill,
+form input:-webkit-autofill:hover,
+form input:-webkit-autofill:focus,
+form input:-webkit-autofill:active,
+form textarea:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px #0F0F15 inset !important;
+  -webkit-text-fill-color: #ffffff !important;
+  caret-color: #ffffff !important;
+  transition: background-color 999999s 0s, color 999999s 0s !important;
+}
+
+form input::placeholder,
+form textarea::placeholder { color: rgba(255,255,255,0.4) !important; }

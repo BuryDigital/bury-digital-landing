@@ -19,15 +19,16 @@ export function initStartTrial() {
   };
 
   // Show/hide the "What type of business?" field based on industry selection.
-  // Native `required` toggling lets the existing form.checkValidity() path
-  // catch an empty value with the same browser-provided error styling.
+  // Uses style.display because the .field rule sets display:flex with higher
+  // specificity than [hidden], so the `hidden` attribute alone wouldn't hide
+  // it. 'flex' on show matches the other fields' label/input gap exactly.
   industrySelect.addEventListener('change', () => {
     if (industrySelect.value === 'Other') {
-      otherWrapper.hidden = false;
+      otherWrapper.style.display = 'flex';
       otherInput.required = true;
       otherInput.focus();
     } else {
-      otherWrapper.hidden = true;
+      otherWrapper.style.display = 'none';
       otherInput.required = false;
       otherInput.value = '';
     }

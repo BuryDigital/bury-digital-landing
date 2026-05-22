@@ -5,6 +5,10 @@
 .eyebrow { display:inline-flex; align-items:center; gap:8px; height:28px; padding:0 12px; border-radius:999px; background:#13131A; border:1px solid #2A2A35; color:#8A8A9A; font-size:12px; font-weight:500; margin-bottom:24px; }
 .eyebrow .dot { width:6px; height:6px; border-radius:999px; background:#00D4AA; animation:pulse 2s ease-in-out infinite; }
 @keyframes pulse { 0%,100% { opacity:1; } 50% { opacity:0.5; } }
+@media (max-width: 640px) {
+  .eyebrow { display:flex; align-items:flex-start; gap:8px; }
+  .eyebrow .dot { flex-shrink:0; margin-top:2px; }
+}
 h1.display { font-size:60px; line-height:1.05; letter-spacing:-0.03em; font-weight:600; margin:0; max-width:14ch; }
 h1.display em { font-style:normal; color:#00D4AA; }
 .hero-sub { color:#8A8A9A; font-size:17px; line-height:26px; margin:24px 0 0; max-width:48ch; }

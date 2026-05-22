@@ -2,13 +2,9 @@
 .hero::before { content:''; position:absolute; inset:-200px 0 0; background: radial-gradient(900px 500px at 50% 0%, rgba(0,212,170,0.09), transparent 60%); pointer-events:none; }
 .hero-grid { display:grid; grid-template-columns: 1.05fr 1fr; gap:64px; align-items:center; position:relative; }
 @media (max-width: 960px) { .hero-grid { grid-template-columns: 1fr; gap:40px; } }
-.eyebrow { display:inline-flex; align-items:center; gap:8px; height:28px; padding:0 12px; border-radius:999px; background:#13131A; border:1px solid #2A2A35; color:#8A8A9A; font-size:12px; font-weight:500; margin-bottom:24px; }
-.eyebrow .dot { width:6px; height:6px; border-radius:999px; background:#00D4AA; animation:pulse 2s ease-in-out infinite; }
+.eyebrow { display:flex; align-items:center; gap:8px; width:fit-content; padding:8px 16px; border-radius:999px; background:#13131A; border:1px solid #2A2A35; color:#8A8A9A; font-size:12px; font-weight:500; margin-bottom:24px; }
+.eyebrow .dot { width:6px; height:6px; border-radius:999px; background:#00D4AA; animation:pulse 2s ease-in-out infinite; flex-shrink:0; }
 @keyframes pulse { 0%,100% { opacity:1; } 50% { opacity:0.5; } }
-@media (max-width: 768px) {
-  .eyebrow { display:inline-flex; width:fit-content; align-items:flex-start; gap:8px; height:auto; }
-  .eyebrow .dot { flex-shrink:0; margin-top:2px; }
-}
 h1.display { font-size:60px; line-height:1.05; letter-spacing:-0.03em; font-weight:600; margin:0; max-width:14ch; }
 h1.display em { font-style:normal; color:#00D4AA; }
 .hero-sub { color:#8A8A9A; font-size:17px; line-height:26px; margin:24px 0 0; max-width:48ch; }

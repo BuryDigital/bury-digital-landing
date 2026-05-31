@@ -105,6 +105,13 @@
   --shadow-3: 0 16px 48px -18px rgba(17,17,17,0.22);         /* modal, popover */
   --ring-focus: 0 0 0 1px var(--accent), 0 0 0 4px var(--accent-ring);
 
+  /* In-content dark product mockups (hero lead-hub card + "See it work"
+     demo card) — a single softer charcoal lifted off true black, framed
+     with a large diffuse shadow so they read as screenshots on the light page. */
+  --mock-surface: #15171C;
+  --mock-radius:  20px;
+  --mock-shadow:  0 30px 70px -28px rgba(17,17,17,0.34), 0 10px 28px -16px rgba(17,17,17,0.16);
+
   /* -------- Motion -------- */
   --ease-out:   cubic-bezier(0.2, 0, 0, 1);
   --ease-in-out:cubic-bezier(0.4, 0, 0.2, 1);

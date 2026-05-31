@@ -18,9 +18,10 @@ h1.display em { font-style:normal; color:var(--accent-ink); }
 .hero-fine { margin-top:14px; font-size:12px; color:var(--fg-subtle); }
 @media (max-width: 560px) { h1.display { font-size:42px; } }
 
-/* Hero product mock */
-.hero-mock { position:relative; }
-.mock { background:#13131A; border:1px solid #2A2A35; border-radius:14px; overflow:hidden; box-shadow: 0 40px 80px -20px rgba(0,0,0,0.6), 0 0 0 1px rgba(255,255,255,0.02) inset; }
+/* Hero product mock — slightly reduced in size/weight and given side
+   breathing room so the top of the page isn't so dark-heavy. */
+.hero-mock { position:relative; max-width:440px; margin-inline:auto; }
+.mock { background:var(--mock-surface); border:1px solid #2A2A35; border-radius:var(--mock-radius); overflow:hidden; box-shadow: var(--mock-shadow), 0 0 0 1px rgba(255,255,255,0.02) inset; }
 .mock-bar { display:flex; align-items:center; gap:8px; padding:12px 14px; border-bottom:1px solid #2A2A35; background:#0F0F15; }
 .mock-bar .td { width:10px; height:10px; border-radius:999px; }
 .mock-bar .title { margin-left:auto; font-size:11px; color:#9A9AAA; }
@@ -51,7 +52,7 @@ h1.display em { font-style:normal; color:var(--accent-ink); }
 .sms .tick { font-size:10px; color:#9A9AAA; align-self:flex-end; margin-top:2px; }
 
 /* floating notification */
-.float-note { position:absolute; top:-16px; right:-20px; background:#13131A; border:1px solid #2A2A35; border-radius:12px; padding:10px 14px; display:flex; align-items:center; gap:10px; box-shadow:0 16px 40px -12px rgba(0,0,0,0.6); }
+.float-note { position:absolute; top:-16px; right:-20px; background:var(--mock-surface); border:1px solid #2A2A35; border-radius:12px; padding:10px 14px; display:flex; align-items:center; gap:10px; box-shadow:0 16px 40px -16px rgba(17,17,17,0.30); }
 .float-note .ic { width:28px; height:28px; border-radius:8px; background:rgba(0,212,170,0.14); color:#00D4AA; display:flex; align-items:center; justify-content:center; flex:none; }
 .float-note .ic .icon { width:16px; height:16px; }
 .float-note .t { font-size:12px; color:#F0F0F0; font-weight:500; }

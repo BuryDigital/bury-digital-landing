@@ -34,9 +34,9 @@
      --accent (raw teal) is reserved for FILLS (primary buttons, dots,
      logo badge) where near-black text sits on top. For teal *text/links*
      on the light page use --accent-ink, which is darkened to clear AA. */
-  --accent:          #00D4AA;
-  --accent-ink:      #0A6E57;   /* AA-safe teal for links/labels — ~5.6:1 */
-  --accent-ink-hover:#08543F;
+  --accent:          #00D4AA;   /* bright green — FILLS ONLY (buttons, SMS bubbles, dots) */
+  --accent-ink:      #047857;   /* darker green for green TEXT on light bg — 5.3:1 on --bg */
+  --accent-ink-hover:#035E45;
   --accent-hover:    #1AE0B8;
   --accent-press:    #00B896;
   --accent-soft:     rgba(0, 212, 170, 0.12);

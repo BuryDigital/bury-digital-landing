@@ -1,0 +1,20 @@
+/* Proof strip — one client line + trust credentials + the problem stat.
+   A quiet light band that sits directly under the hero. */
+.proof { background:var(--surface-2); border-top:1px solid var(--border); border-bottom:1px solid var(--border); padding:48px 0; }
+.proof-inner { max-width:880px; margin:0 auto; display:flex; flex-direction:column; align-items:center; text-align:center; gap:20px; }
+
+.proof-quote { font-size:20px; line-height:1.45; letter-spacing:-0.01em; color:var(--fg); font-weight:500; max-width:42ch; margin:0; text-wrap:balance; }
+.proof-quote .mark { color:var(--accent-ink); }
+.proof-attrib { font-size:13px; color:var(--fg-muted); font-weight:500; }
+
+.proof-stat { font-size:15px; line-height:1.5; color:var(--fg-muted); max-width:54ch; margin:0; }
+.proof-stat b { color:var(--fg); font-weight:600; font-variant-numeric:tabular-nums; }
+
+.proof-trust { display:inline-flex; align-items:center; flex-wrap:wrap; justify-content:center; gap:8px 14px; font-size:13px; color:var(--fg-muted); font-weight:500; }
+.proof-trust .sep { color:var(--border-strong); }
+.proof-trust .dot { width:6px; height:6px; border-radius:999px; background:var(--accent); flex:none; }
+
+@media (max-width:560px) {
+  .proof { padding:36px 0; }
+  .proof-quote { font-size:17px; }
+}

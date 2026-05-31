@@ -40,11 +40,14 @@ function renderSummary(container, data, hue) {
 }
 
 export function initInteractiveDemo() {
+  // The homepage now ships a single locked real-estate flow, so the
+  // industry tab bar is optional. Only the SMS / summary / business
+  // elements are required.
   const tabs = document.getElementById('demo-tabs');
   const smsEl = document.getElementById('demo-sms');
   const sumEl = document.getElementById('demo-sum');
   const bizEl = document.getElementById('demo-biz');
-  if (!tabs || !smsEl || !sumEl || !bizEl) return;
+  if (!smsEl || !sumEl || !bizEl) return;
 
   function select(industry) {
     const data = DEMO_SCRIPTS[industry];
@@ -54,13 +57,15 @@ export function initInteractiveDemo() {
     renderSummary(sumEl, data, INDUSTRY_HUES[industry] ?? DEFAULT_HUE);
   }
 
-  tabs.addEventListener('click', (e) => {
-    const button = e.target.closest('.demo-tab');
-    if (!button) return;
-    tabs.querySelectorAll('.demo-tab').forEach((t) => t.classList.remove('active'));
-    button.classList.add('active');
-    select(button.dataset.ind);
-  });
+  if (tabs) {
+    tabs.addEventListener('click', (e) => {
+      const button = e.target.closest('.demo-tab');
+      if (!button) return;
+      tabs.querySelectorAll('.demo-tab').forEach((t) => t.classList.remove('active'));
+      button.classList.add('active');
+      select(button.dataset.ind);
+    });
+  }
 
   select('realestate');
 }

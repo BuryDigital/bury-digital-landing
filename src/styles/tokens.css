@@ -14,28 +14,33 @@
 }
 
 :root {
-  /* -------- Colour: surfaces -------- */
-  --bg:              #0A0A0F;   /* page background */
-  --surface:         #13131A;   /* cards */
-  --surface-2:       #1C1C26;   /* modals, popovers, hover state of surface */
-  --surface-3:       #23232F;   /* top-of-stack, e.g. tooltip, context menu */
+  /* -------- Colour: surfaces (light theme) -------- */
+  --bg:              #FAFAF7;   /* warm off-white page background */
+  --surface:         #FFFFFF;   /* cards */
+  --surface-2:       #F3F3ED;   /* hover state, subtle fills */
+  --surface-3:       #ECECE4;   /* top-of-stack, inset tiles */
 
   /* -------- Colour: borders -------- */
-  --border:          #2A2A35;   /* default separator */
-  --border-strong:   #3A3A48;   /* hover/active separator */
+  --border:          #E5E5DC;   /* default separator (warm) */
+  --border-strong:   #D2D2C6;   /* hover/active separator */
 
-  /* -------- Colour: text -------- */
-  --fg:              #F0F0F0;   /* headings, primary */
-  --fg-muted:        #8A8A9A;   /* body, secondary */
-  --fg-subtle:       #6A6A78;   /* timestamps, captions, placeholders */
-  --fg-on-accent:    #0A0A0F;   /* text on teal */
+  /* -------- Colour: text (all AA on --bg) -------- */
+  --fg:              #111111;   /* headings, primary — ~16:1 */
+  --fg-muted:        #3F3F46;   /* body, secondary — ~9.5:1 */
+  --fg-subtle:       #5A5A63;   /* captions, placeholders — ~5.6:1 */
+  --fg-on-accent:    #0A0A0F;   /* near-black text on teal fill */
 
-  /* -------- Colour: brand -------- */
+  /* -------- Colour: brand --------
+     --accent (raw teal) is reserved for FILLS (primary buttons, dots,
+     logo badge) where near-black text sits on top. For teal *text/links*
+     on the light page use --accent-ink, which is darkened to clear AA. */
   --accent:          #00D4AA;
+  --accent-ink:      #0A6E57;   /* AA-safe teal for links/labels — ~5.6:1 */
+  --accent-ink-hover:#08543F;
   --accent-hover:    #1AE0B8;
   --accent-press:    #00B896;
   --accent-soft:     rgba(0, 212, 170, 0.12);
-  --accent-ring:     rgba(0, 212, 170, 0.25);
+  --accent-ring:     rgba(0, 212, 170, 0.30);
 
   /* -------- Colour: pipeline status -------- */
   --status-new:        #00D4AA;
@@ -95,9 +100,9 @@
   --r-pill:   999px;
 
   /* -------- Shadow / elevation -------- */
-  --shadow-1: 0 1px 0 rgba(255,255,255,0.02) inset;           /* hairline top light */
-  --shadow-2: 0 8px 24px -12px rgba(0,0,0,0.5);               /* raised card */
-  --shadow-3: 0 16px 48px -16px rgba(0,0,0,0.6);              /* modal, popover */
+  --shadow-1: 0 1px 0 rgba(17,17,17,0.02) inset;             /* hairline */
+  --shadow-2: 0 8px 24px -14px rgba(17,17,17,0.18);          /* raised card */
+  --shadow-3: 0 16px 48px -18px rgba(17,17,17,0.22);         /* modal, popover */
   --ring-focus: 0 0 0 1px var(--accent), 0 0 0 4px var(--accent-ring);
 
   /* -------- Motion -------- */
@@ -157,11 +162,11 @@ small, .text-small { font-size: var(--fs-small); line-height: var(--lh-small); c
 }
 
 a {
-  color: var(--accent);
+  color: var(--accent-ink);
   text-decoration: none;
   transition: color var(--dur-base) var(--ease-out);
 }
-a:hover { color: var(--accent-hover); }
+a:hover { color: var(--accent-ink-hover); }
 
 /* -------- Button primitives -------- */
 .btn {
@@ -192,8 +197,8 @@ a:hover { color: var(--accent-hover); }
 .btn-primary:hover { background: var(--accent-hover); }
 .btn-primary:active { background: var(--accent-press); }
 
-.btn-outline { background: transparent; border-color: var(--accent); color: var(--accent); }
-.btn-outline:hover { background: var(--accent-soft); }
+.btn-outline { background: transparent; border-color: var(--border-strong); color: var(--fg); }
+.btn-outline:hover { background: var(--surface-2); border-color: var(--accent-ink); }
 
 .btn-ghost { background: transparent; color: var(--fg); }
 .btn-ghost:hover { background: var(--surface-2); }

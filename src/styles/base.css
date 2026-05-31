@@ -1,4 +1,4 @@
-html, body { margin:0; background:#0A0A0F; color:#F0F0F0; font-family:Inter, system-ui, sans-serif; -webkit-font-smoothing:antialiased; }
+html, body { margin:0; background:var(--bg); color:var(--fg); font-family:Inter, system-ui, sans-serif; -webkit-font-smoothing:antialiased; }
 html { scroll-behavior: smooth; scroll-padding-top: 80px; }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 * { box-sizing: border-box; }

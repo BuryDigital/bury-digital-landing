@@ -1,13 +1,13 @@
 .btn { display:inline-flex; align-items:center; justify-content:center; gap:8px; height:40px; padding:0 16px; border-radius:8px; font-family:Inter, sans-serif; font-size:14px; font-weight:500; cursor:pointer; border:1px solid transparent; transition: background 150ms, border-color 150ms, transform 80ms; white-space:nowrap; }
 .btn:active { transform: scale(0.97); }
-.btn-primary { background:#00D4AA; color:#0A0A0F; }
+.btn-primary { background:#00D4AA; color:#0A0A0F; font-weight:600; }
 .btn-primary:hover { background:#1AE0B8; }
-.btn-outline { background:transparent; border-color:#2A2A35; color:#F0F0F0; }
-.btn-outline:hover { border-color:#3A3A48; background:#13131A; }
-.btn-teal-outline { background:transparent; border-color:#00D4AA; color:#00D4AA; }
-.btn-teal-outline:hover { background: rgba(0,212,170,0.08); }
-.btn-ghost { background:transparent; color:#F0F0F0; }
-.btn-ghost:hover { background:#1C1C26; }
+.btn-outline { background:transparent; border-color:var(--border-strong); color:var(--fg); }
+.btn-outline:hover { border-color:var(--accent-ink); background:var(--surface-2); }
+.btn-teal-outline { background:transparent; border-color:var(--accent-ink); color:var(--accent-ink); }
+.btn-teal-outline:hover { background: var(--accent-soft); }
+.btn-ghost { background:transparent; color:var(--fg); }
+.btn-ghost:hover { background:var(--surface-2); }
 .btn-lg { height:48px; padding:0 22px; font-size:15px; }
 
 .btn-lime { background:#A3E635; color:#0A0A0F; }
@@ -18,8 +18,8 @@
 /* Anchors styled as buttons — suppress default link hover colour + underline */
 a.btn, a.btn:hover { text-decoration:none; }
 a.btn-primary, a.btn-primary:hover { color:#0A0A0F; }
-a.btn-outline, a.btn-outline:hover { color:#F0F0F0; }
-a.btn-teal-outline, a.btn-teal-outline:hover { color:#00D4AA; }
+a.btn-outline, a.btn-outline:hover { color:var(--fg); }
+a.btn-teal-outline, a.btn-teal-outline:hover { color:var(--accent-ink); }
 a.btn-lime, a.btn-lime:hover { color:#0A0A0F; }
 a.btn-lime-outline, a.btn-lime-outline:hover { color:#A3E635; }
 a.btn-ghost, a.btn-ghost:hover { color:#F0F0F0; }

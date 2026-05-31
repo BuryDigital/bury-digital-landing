@@ -1,13 +1,13 @@
-.trial-page .trial-sub { color:#8A8A9A; font-size:16px; line-height:24px; margin:16px 0 0; max-width:60ch; }
+.trial-page .trial-sub { color:var(--fg-muted); font-size:16px; line-height:24px; margin:16px 0 0; max-width:60ch; }
 
-.trial-form-card { background:#13131A; border:1px solid #2A2A35; border-radius:16px; padding:32px; position:relative; }
+.trial-form-card { background:var(--surface); border:1px solid var(--border); border-radius:16px; padding:32px; position:relative; box-shadow:var(--shadow-2); }
 @media (max-width:640px){ .trial-form-card { padding:24px; border-radius:14px; } }
 
 .trial-form-card .field { display:flex; flex-direction:column; gap:8px; margin-bottom:20px; }
 .trial-form-card .field:last-of-type { margin-bottom:24px; }
-.trial-form-card label { font-size:13px; font-weight:600; color:#F0F0F0; letter-spacing:-0.005em; }
-.trial-form-card label .req { color:#00D4AA; margin-left:2px; font-weight:600; }
-.trial-form-card label .opt { color:#6A6A78; font-weight:400; margin-left:4px; }
+.trial-form-card label { font-size:13px; font-weight:600; color:var(--fg); letter-spacing:-0.005em; }
+.trial-form-card label .req { color:var(--accent-ink); margin-left:2px; font-weight:600; }
+.trial-form-card label .opt { color:var(--fg-subtle); font-weight:400; margin-left:4px; }
 
 /* Layout properties for form inputs — colour/border/focus are forced below
    via the !important block so they survive Chrome autofill, browser
@@ -28,24 +28,24 @@
 }
 .trial-form-card input:hover,
 .trial-form-card select:hover,
-.trial-form-card textarea:hover { border-color:#3A3A48; }
+.trial-form-card textarea:hover { border-color:var(--border-strong); }
 .trial-form-card textarea { resize:vertical; min-height:84px; }
 
-/* Native select chevron, restyled */
+/* Native select chevron, restyled (dark grey for the light field) */
 .trial-form-card select {
   appearance:none; -webkit-appearance:none;
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%238A8A9A' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><polyline points='6 9 12 15 18 9'/></svg>");
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%235A5A63' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><polyline points='6 9 12 15 18 9'/></svg>");
   background-repeat:no-repeat;
   background-position: right 14px center;
   padding-right:42px;
 }
 .trial-form-card select:focus {
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2300D4AA' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><polyline points='6 9 12 15 18 9'/></svg>");
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%230A6E57' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><polyline points='6 9 12 15 18 9'/></svg>");
 }
 /* Native select-popup styling — Firefox honours these fully; Chrome/Safari
    apply them on macOS but ignore most styling on the native popup. */
-.trial-form-card select option { background:#0F0F15; color:#ffffff; }
-.trial-form-card select optgroup { color:#8A8A9A; font-weight:600; font-style:normal; background:#0F0F15; }
+.trial-form-card select option { background:#ffffff; color:#111111; }
+.trial-form-card select optgroup { color:#5A5A63; font-weight:600; font-style:normal; background:#ffffff; }
 
 .trial-form-card .trial-submit { width:100%; }
 .trial-form-card .trial-submit[disabled] { opacity:0.6; cursor:not-allowed; }
@@ -55,12 +55,12 @@
   padding:12px 14px;
   border-radius:8px;
   background:rgba(239,68,68,0.08);
-  border:1px solid rgba(239,68,68,0.3);
-  color:#FCA5A5;
+  border:1px solid rgba(239,68,68,0.35);
+  color:#B91C1C;
   font-size:14px;
   line-height:21px;
 }
-.trial-form-card .trial-error a { color:#FCA5A5; text-decoration:underline; }
+.trial-form-card .trial-error a { color:#B91C1C; text-decoration:underline; }
 
 /* Honeypot — visually hidden, still in flow for bots that scan submitted fields */
 .trial-form-card .honeypot {
@@ -74,27 +74,28 @@
 
 /* Success state */
 .trial-success {
-  background:#13131A;
-  border:1px solid rgba(0,212,170,0.4);
+  background:var(--surface);
+  border:1px solid var(--accent);
   border-radius:16px;
   padding:40px 32px;
   text-align:center;
+  box-shadow:var(--shadow-2);
 }
 .trial-success-ic {
   width:56px; height:56px; border-radius:999px;
-  background:rgba(0,212,170,0.14); color:#00D4AA;
+  background:var(--accent-soft); color:var(--accent-ink);
   display:flex; align-items:center; justify-content:center;
   margin:0 auto 18px;
 }
 .trial-success-ic svg { width:28px; height:28px; }
-.trial-success h2 { font-size:22px; font-weight:600; color:#F0F0F0; letter-spacing:-0.01em; margin:0 0 10px; }
-.trial-success p { font-size:15px; color:#8A8A9A; line-height:24px; margin:0; max-width:48ch; margin-left:auto; margin-right:auto; }
+.trial-success h2 { font-size:22px; font-weight:600; color:var(--fg); letter-spacing:-0.01em; margin:0 0 10px; }
+.trial-success p { font-size:15px; color:var(--fg-muted); line-height:24px; margin:0; max-width:48ch; margin-left:auto; margin-right:auto; }
 
 /* ============================================================
-   Consistent dark input styling — every type explicitly listed.
+   Consistent light input styling — every type explicitly listed.
    Forced with !important so Chrome autofill (which fights back
    even with the :-webkit-autofill override) cannot repaint name,
-   business_name, or any other text input white.
+   business_name, or any other text input a different colour.
    ============================================================ */
 form input[type="text"],
 form input[type="email"],
@@ -102,10 +103,10 @@ form input[type="tel"],
 form input[type="number"],
 form select,
 form textarea {
-  background-color: #0F0F15 !important;
-  color: #ffffff !important;
-  -webkit-text-fill-color: #ffffff !important;
-  border: 1px solid #2A2A35 !important;
+  background-color: #ffffff !important;
+  color: #111111 !important;
+  -webkit-text-fill-color: #111111 !important;
+  border: 1px solid var(--border-strong) !important;
 }
 
 form input[type="text"]:focus,
@@ -115,8 +116,8 @@ form input[type="number"]:focus,
 form select:focus,
 form textarea:focus {
   outline: none !important;
-  border-color: #00D4AA !important;
-  box-shadow: 0 0 0 3px rgba(0,212,170,0.18) !important;
+  border-color: #00B896 !important;
+  box-shadow: 0 0 0 3px rgba(0,212,170,0.22) !important;
 }
 
 /* Chrome autofill defence */
@@ -125,11 +126,11 @@ form input:-webkit-autofill:hover,
 form input:-webkit-autofill:focus,
 form input:-webkit-autofill:active,
 form textarea:-webkit-autofill {
-  -webkit-box-shadow: 0 0 0 1000px #0F0F15 inset !important;
-  -webkit-text-fill-color: #ffffff !important;
-  caret-color: #ffffff !important;
+  -webkit-box-shadow: 0 0 0 1000px #ffffff inset !important;
+  -webkit-text-fill-color: #111111 !important;
+  caret-color: #111111 !important;
   transition: background-color 999999s 0s, color 999999s 0s !important;
 }
 
 form input::placeholder,
-form textarea::placeholder { color: rgba(255,255,255,0.4) !important; }
+form textarea::placeholder { color: #5A5A63 !important; }

@@ -25,3 +25,9 @@
 .demo-summary-cell .v { font-size:13px; color:#F0F0F0; font-weight:500; margin-top:3px; }
 .demo-summary-cell .v.hot { color:#F5A623; }
 .demo-summary-cell .v.green { color:#A3E635; }
+/* The "Call back" / "View thread" buttons sit inside the dark summary
+   card, so the outline button needs light-on-dark styling — the global
+   .btn-outline is tuned for the light page (near-black text) and would be
+   invisible here until hover. */
+.demo-summary .btn-outline { border-color:#3A3A48; color:#F0F0F0; }
+.demo-summary .btn-outline:hover { background:#1C1C26; border-color:#4A4A58; color:#F0F0F0; }

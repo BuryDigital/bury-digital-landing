@@ -3,8 +3,9 @@
 // Browser never talks to n8n or Supabase directly. This route validates +
 // normalises the input, throttles per-phone using the Supabase SERVICE ROLE
 // key, then forwards to the n8n "Start Demo" webhook. Secrets
-// (N8N_DEMO_WEBHOOK_URL, N8N_DEMO_SECRET, SUPABASE_SERVICE_ROLE_KEY) live in
-// context.env and are never sent to the client.
+// (N8N_DEMO_WEBHOOK_URL, N8N_DEMO_SECRET, SUPABASE_SERVICE_ROLE_KEY) come from
+// the Pages Function env binding (context.env) — never process.env, never the
+// client.
 
 import { INDUSTRIES } from '../../src/data/industries.js';
 
@@ -32,6 +33,7 @@ function normaliseAuPhone(raw) {
 }
 
 export async function onRequestPost(context) {
+  // Pages Function env binding — NOT process.env.
   const { request, env } = context;
 
   // 1. Parse body.
@@ -59,12 +61,21 @@ export async function onRequestPost(context) {
   const N8N_URL = env.N8N_DEMO_WEBHOOK_URL;
   const N8N_SECRET = env.N8N_DEMO_SECRET;
 
-  // Missing server config — generic error, never reveal which var.
+  // TODO: revert verbose errors before launch
+  // Config check — report which server vars are missing (presence only, never
+  // the values themselves).
   if (!SERVICE_KEY || !N8N_URL || !N8N_SECRET) {
-    return json({ status: 'error', message: 'Demo is temporarily unavailable.' }, 500);
+    const detail = {
+      SUPABASE_SERVICE_ROLE_KEY: Boolean(SERVICE_KEY),
+      N8N_DEMO_WEBHOOK_URL: Boolean(N8N_URL),
+      N8N_DEMO_SECRET: Boolean(N8N_SECRET),
+    };
+    console.log('[/api/demo] stage=config detail=', detail);
+    return json({ status: 'error', stage: 'config', detail }, 500);
   }
 
   // 4. Throttle: count demo_requests for this phone in the last 24h.
+  let count = 0;
   try {
     const since = new Date(Date.now() - THROTTLE_WINDOW_MS).toISOString();
     const url = `${SUPABASE_URL}/rest/v1/demo_requests`
@@ -78,37 +89,53 @@ export async function onRequestPost(context) {
         Range: '0-0',
       },
     });
-    let count = 0;
+    if (!countRes.ok) {
+      const txt = (await countRes.text().catch(() => '')) || '';
+      const detail = `Supabase HTTP ${countRes.status}: ${txt.slice(0, 300)}`;
+      console.log('[/api/demo] stage=throttle detail=', detail);
+      return json({ status: 'error', stage: 'throttle', detail }, 500);
+    }
     const cr = countRes.headers.get('content-range'); // e.g. "0-0/5" or "*/0"
     if (cr && cr.includes('/')) {
       const n = parseInt(cr.split('/')[1], 10);
       if (Number.isFinite(n)) count = n;
-    } else if (countRes.ok) {
-      const rows = await countRes.json();
+    } else {
+      const rows = await countRes.json().catch(() => []);
       count = Array.isArray(rows) ? rows.length : 0;
     }
-    if (count >= THROTTLE_LIMIT) {
-      return json(
-        { status: 'throttled', message: "You've hit the demo limit for this number today, try again tomorrow." },
-        429,
-      );
-    }
-  } catch {
-    return json({ status: 'error', message: 'Demo is temporarily unavailable.' }, 500);
+  } catch (err) {
+    const detail = err instanceof Error ? err.message : String(err);
+    console.log('[/api/demo] stage=throttle (exception) detail=', detail);
+    return json({ status: 'error', stage: 'throttle', detail }, 500);
   }
 
-  // 5. Forward to n8n. 2xx = success.
+  if (count >= THROTTLE_LIMIT) {
+    return json(
+      { status: 'throttled', message: "You've hit the demo limit for this number today, try again tomorrow." },
+      429,
+    );
+  }
+
+  // 5. Forward to n8n — network/fetch stage.
+  let fwd;
   try {
-    const fwd = await fetch(N8N_URL, {
+    fwd = await fetch(N8N_URL, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', 'x-demo-secret': N8N_SECRET },
       body: JSON.stringify({ phone: normalised, industry, name: name || undefined }),
     });
-    if (!fwd.ok) {
-      return json({ status: 'error', message: 'Something went wrong sending the demo.' }, 502);
-    }
-  } catch {
-    return json({ status: 'error', message: 'Something went wrong sending the demo.' }, 502);
+  } catch (err) {
+    const detail = err instanceof Error ? err.message : String(err);
+    console.log('[/api/demo] stage=n8n_fetch detail=', detail);
+    return json({ status: 'error', stage: 'n8n_fetch', detail }, 502);
+  }
+
+  // n8n response-status stage.
+  if (!fwd.ok) {
+    const txt = (await fwd.text().catch(() => '')) || '';
+    const detail = `n8n HTTP ${fwd.status}: ${txt.slice(0, 300)}`;
+    console.log('[/api/demo] stage=n8n_status detail=', detail);
+    return json({ status: 'error', stage: 'n8n_status', detail }, 502);
   }
 
   return json({ status: 'ok', message: 'Sent — check your phone in a few seconds.' }, 200);

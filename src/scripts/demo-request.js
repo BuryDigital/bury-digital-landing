@@ -2,7 +2,7 @@
 // same-origin /api/demo route (a Cloudflare Pages Function) — never n8n or
 // Supabase directly. The server validates, throttles, and forwards to n8n.
 
-import { INDUSTRIES } from '../data/industries.js';
+import { INDUSTRIES, INDUSTRY_GROUPS } from '../data/industries.js';
 
 const MESSAGES = {
   ok: 'Sent — check your phone in a few seconds.',
@@ -86,19 +86,38 @@ function initIndustryCombo(onChange) {
     return { value: () => '', open: () => {}, };
   }
 
-  // Build one <li role="option"> per industry.
-  const options = INDUSTRIES.map(({ v, l }, i) => {
-    const li = document.createElement('li');
-    li.className = 'dr-combo-option';
-    li.id = `dr-opt-${i}`;
-    li.setAttribute('role', 'option');
-    li.setAttribute('aria-selected', 'false');
-    li.dataset.value = v;
-    li.dataset.label = l.toLowerCase();
-    li.textContent = l;
-    list.appendChild(li);
-    return li;
-  });
+  // Build the list grouped by industry group: a non-interactive heading <li>
+  // per group, followed by its option <li>s. Headings carry the group name so
+  // they can be hidden when a search filters every option out of that group.
+  const options = [];
+  const headings = [];
+  let optIndex = 0;
+  for (const group of INDUSTRY_GROUPS) {
+    const members = INDUSTRIES.filter((it) => it.g === group);
+    if (!members.length) continue;
+
+    const head = document.createElement('li');
+    head.className = 'dr-combo-group';
+    head.setAttribute('role', 'presentation');
+    head.dataset.group = group;
+    head.textContent = group;
+    list.appendChild(head);
+    headings.push(head);
+
+    for (const { v, l } of members) {
+      const li = document.createElement('li');
+      li.className = 'dr-combo-option';
+      li.id = `dr-opt-${optIndex++}`;
+      li.setAttribute('role', 'option');
+      li.setAttribute('aria-selected', 'false');
+      li.dataset.value = v;
+      li.dataset.group = group;
+      li.dataset.label = l.toLowerCase();
+      li.textContent = l;
+      list.appendChild(li);
+      options.push(li);
+    }
+  }
 
   let active = -1; // index into the currently-visible options for keyboard nav
 
@@ -125,6 +144,10 @@ function initIndustryCombo(onChange) {
       const match = !term || o.dataset.label.includes(term);
       o.hidden = !match;
       if (match) shown += 1;
+    }
+    // Hide a group heading when none of its options are visible.
+    for (const h of headings) {
+      h.hidden = !options.some((o) => o.dataset.group === h.dataset.group && !o.hidden);
     }
     emptyEl.hidden = shown > 0;
     setActive(shown > 0 ? 0 : -1);

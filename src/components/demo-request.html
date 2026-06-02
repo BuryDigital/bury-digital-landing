@@ -15,10 +15,27 @@
               placeholder="04XX XXX XXX" aria-describedby="dr-error" />
           </div>
           <div class="field dr-field-industry">
-            <label for="dr-industry">What industry are you in?</label>
-            <select id="dr-industry" name="industry" required>
-              <option value="" disabled selected>Select your industry</option>
-            </select>
+            <label id="dr-industry-label" for="dr-industry-btn">What industry are you in?</label>
+            <div class="dr-combo" id="dr-combo">
+              <button type="button" class="dr-combo-btn" id="dr-industry-btn"
+                aria-haspopup="listbox" aria-expanded="false"
+                aria-labelledby="dr-industry-label dr-combo-value">
+                <span class="dr-combo-value is-placeholder" id="dr-combo-value">Select your industry</span>
+                <svg class="dr-combo-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+              <div class="dr-combo-panel" id="dr-combo-panel" hidden>
+                <div class="dr-combo-search">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+                  <input type="text" id="dr-combo-search" placeholder="Search industries…"
+                    autocomplete="off" autocapitalize="off" spellcheck="false"
+                    role="combobox" aria-expanded="true" aria-controls="dr-combo-list"
+                    aria-autocomplete="list" aria-label="Search industries" />
+                </div>
+                <ul class="dr-combo-list" id="dr-combo-list" role="listbox" aria-labelledby="dr-industry-label"></ul>
+                <div class="dr-combo-empty" id="dr-combo-empty" hidden>No matching industries</div>
+              </div>
+              <input type="hidden" name="industry" id="dr-industry" />
+            </div>
           </div>
         </div>
 

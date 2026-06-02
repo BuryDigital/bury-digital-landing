@@ -31,8 +31,7 @@
 
 /* Inputs — layout only; colour/border/focus come from form.css's global
    `form input[...]` rules so this card matches the trial form exactly. */
-.demo-request input[type="tel"],
-.demo-request select {
+.demo-request input[type="tel"] {
   font-family: var(--font-sans);
   font-size: 15px;
   border-radius: 8px;
@@ -41,18 +40,136 @@
   width: 100%;
   transition: border-color 150ms, box-shadow 150ms;
 }
-.demo-request input[type="tel"]:hover,
-.demo-request select:hover { border-color: var(--border-strong); }
+.demo-request input[type="tel"]:hover { border-color: var(--border-strong); }
 
-/* Native select chevron, matching the trial form. */
-.demo-request select {
-  appearance: none; -webkit-appearance: none;
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%235A5A63' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><polyline points='6 9 12 15 18 9'/></svg>");
-  background-repeat: no-repeat;
-  background-position: right 14px center;
-  padding-right: 42px;
+/* ── Custom industry dropdown ─────────────────────────────────────────────
+   A themed combobox (trigger button + search panel + listbox) that replaces
+   the native <select>, whose popup can't be styled in most browsers. Built on
+   the same tokens as the rest of the card so it sits inside the design system. */
+.dr-combo { position: relative; }
+
+.dr-combo-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  width: 100%;
+  font-family: var(--font-sans);
+  font-size: 15px;
+  line-height: 22px;
+  text-align: left;
+  padding: 12px 14px;
+  border-radius: 8px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--fg);
+  cursor: pointer;
+  transition: border-color 150ms, box-shadow 150ms;
 }
-.demo-request select option { background: #ffffff; color: #111111; }
+.dr-combo-btn:hover { border-color: var(--border-strong); }
+.dr-combo-btn:focus-visible { outline: none; border-color: var(--accent); box-shadow: var(--ring-focus); }
+.dr-combo.is-open .dr-combo-btn { border-color: var(--accent); box-shadow: var(--ring-focus); }
+
+.dr-combo-value { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.dr-combo-value.is-placeholder { color: var(--fg-subtle); }
+
+.dr-combo-chevron {
+  width: 18px; height: 18px; flex: 0 0 auto;
+  color: var(--fg-subtle);
+  transition: transform 180ms var(--ease-out), color 150ms;
+}
+.dr-combo.is-open .dr-combo-chevron { transform: rotate(180deg); color: var(--accent-ink); }
+
+.dr-combo-panel {
+  position: absolute;
+  z-index: 20;
+  top: calc(100% + 6px);
+  left: 0; right: 0;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  box-shadow: var(--shadow-3);
+  padding: 8px;
+  overflow: hidden;
+  animation: dr-combo-in 140ms var(--ease-out);
+}
+@keyframes dr-combo-in {
+  from { opacity: 0; transform: translateY(-4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.dr-combo-search {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 10px;
+  margin-bottom: 6px;
+  border-radius: 8px;
+  background: var(--surface-2);
+  border: 1px solid transparent;
+  transition: border-color 150ms, background 150ms;
+}
+.dr-combo-search:focus-within { background: var(--surface); border-color: var(--accent); }
+.dr-combo-search svg { width: 16px; height: 16px; flex: 0 0 auto; color: var(--fg-subtle); }
+.dr-combo-search input {
+  flex: 1 1 auto;
+  border: none;
+  background: transparent;
+  outline: none;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  line-height: 20px;
+  padding: 10px 0;
+  color: var(--fg);
+}
+.dr-combo-search input::placeholder { color: var(--fg-subtle); }
+
+.dr-combo-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-height: 264px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+.dr-combo-option {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 12px;
+  border-radius: 8px;
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--fg-muted);
+  cursor: pointer;
+}
+.dr-combo-option.is-active { background: var(--surface-2); color: var(--fg); }
+.dr-combo-option[aria-selected="true"] {
+  color: var(--accent-ink);
+  font-weight: 600;
+}
+.dr-combo-option[aria-selected="true"]::after {
+  content: "";
+  width: 16px; height: 16px;
+  margin-left: auto;
+  flex: 0 0 auto;
+  background: var(--accent-ink);
+  -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'><polyline points='20 6 9 17 4 12'/></svg>") center / contain no-repeat;
+          mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'><polyline points='20 6 9 17 4 12'/></svg>") center / contain no-repeat;
+}
+
+.dr-combo-empty {
+  padding: 14px 12px;
+  font-size: 14px;
+  color: var(--fg-subtle);
+  text-align: center;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dr-combo-panel { animation: none; }
+  .dr-combo-chevron { transition: none; }
+}
 
 .dr-error {
   margin-top: 14px;

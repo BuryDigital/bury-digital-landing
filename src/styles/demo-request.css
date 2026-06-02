@@ -1,0 +1,117 @@
+/* Missed-call demo request — compact form card.
+   Mirrors the trial form card (form.css) using design tokens so it sits
+   inside the existing visual system rather than introducing a new style. */
+
+.demo-request .dr-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 28px;
+  max-width: 640px;
+  margin: 0 auto;
+  box-shadow: var(--shadow-2);
+  position: relative;
+}
+@media (max-width: 640px) {
+  .demo-request .dr-card { padding: 22px; border-radius: 14px; }
+}
+
+.dr-row { display: flex; gap: 16px; }
+@media (max-width: 560px) { .dr-row { flex-direction: column; gap: 18px; } }
+.dr-field-phone { flex: 1 1 58%; }
+.dr-field-industry { flex: 1 1 42%; }
+
+.demo-request .field { display: flex; flex-direction: column; gap: 8px; margin: 0; }
+.demo-request label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--fg);
+  letter-spacing: -0.005em;
+}
+
+/* Inputs — layout only; colour/border/focus come from form.css's global
+   `form input[...]` rules so this card matches the trial form exactly. */
+.demo-request input[type="tel"],
+.demo-request select {
+  font-family: var(--font-sans);
+  font-size: 15px;
+  border-radius: 8px;
+  padding: 12px 14px;
+  line-height: 22px;
+  width: 100%;
+  transition: border-color 150ms, box-shadow 150ms;
+}
+.demo-request input[type="tel"]:hover,
+.demo-request select:hover { border-color: var(--border-strong); }
+
+/* Native select chevron, matching the trial form. */
+.demo-request select {
+  appearance: none; -webkit-appearance: none;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%235A5A63' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><polyline points='6 9 12 15 18 9'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  padding-right: 42px;
+}
+.demo-request select option { background: #ffffff; color: #111111; }
+
+/* Invalid phone state. */
+.demo-request input.dr-invalid {
+  border-color: var(--error) !important;
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.15) !important;
+}
+
+.dr-hint { margin: 14px 0 0; font-size: 13px; line-height: 20px; color: var(--fg-subtle); }
+.dr-hint strong { color: var(--fg-muted); font-weight: 600; }
+
+.dr-error {
+  margin-top: 12px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  background: var(--error-soft);
+  border: 1px solid rgba(239, 68, 68, 0.35);
+  color: #B91C1C;
+  font-size: 13px;
+  line-height: 20px;
+}
+
+.demo-request .dr-submit { width: 100%; margin-top: 18px; }
+.demo-request .dr-submit[disabled] { opacity: 0.6; cursor: not-allowed; }
+
+.dr-privacy {
+  margin: 14px 0 0;
+  font-size: 12px;
+  line-height: 18px;
+  color: var(--fg-subtle);
+  text-align: center;
+}
+
+.dr-status--error {
+  margin-top: 14px;
+  padding: 12px 14px;
+  border-radius: 8px;
+  background: var(--error-soft);
+  border: 1px solid rgba(239, 68, 68, 0.35);
+  color: #B91C1C;
+  font-size: 14px;
+  line-height: 21px;
+}
+
+/* Success state. */
+.dr-success { text-align: center; padding: 8px 4px 4px; }
+.dr-success-ic {
+  width: 56px; height: 56px; border-radius: 999px;
+  background: var(--accent-soft); color: var(--accent-ink);
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 16px;
+}
+.dr-success-ic svg { width: 28px; height: 28px; }
+.dr-success h3 {
+  font-size: 20px; font-weight: 600; color: var(--fg);
+  letter-spacing: -0.01em; margin: 0;
+}
+
+/* Honeypot — visually hidden, still submitted. */
+.dr-honeypot {
+  position: absolute; left: -9999px; top: auto;
+  width: 1px; height: 1px; overflow: hidden;
+}

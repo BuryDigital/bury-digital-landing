@@ -1,0 +1,56 @@
+<section id="demo-request" class="demo-request">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eb-text">Try it live</div>
+      <h2 class="h">Try the missed-call recovery demo</h2>
+      <p>Enter your mobile number, choose an industry, and we'll send you a sample text-back flow. Bury Digital can be customised for any service business — these are just examples.</p>
+    </div>
+
+    <div class="dr-card" id="dr-card">
+      <form id="dr-form" class="dr-form" novalidate>
+        <div class="dr-row">
+          <div class="field dr-field-phone">
+            <label for="dr-phone">Your mobile number</label>
+            <input id="dr-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel"
+              placeholder="04XX XXX XXX" aria-describedby="dr-phone-error" />
+          </div>
+          <div class="field dr-field-industry">
+            <label for="dr-industry">Industry</label>
+            <select id="dr-industry" name="industry">
+              <option value="real_estate">Real Estate</option>
+              <option value="builders">Builders</option>
+              <option value="lawyers">Lawyers / Solicitors</option>
+              <option value="plumbers">Plumbers</option>
+              <option value="electricians">Electricians</option>
+            </select>
+          </div>
+        </div>
+
+        <p class="dr-hint" id="dr-hint" aria-live="polite"></p>
+
+        <div class="dr-error" id="dr-phone-error" role="alert" hidden></div>
+
+        <!-- Honeypot — visually hidden, bots autofill it; humans never see it. -->
+        <div class="dr-honeypot" aria-hidden="true">
+          <label for="dr-botcheck">Leave this field empty</label>
+          <input id="dr-botcheck" name="botcheck" type="text" tabindex="-1" autocomplete="off" />
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-lg dr-submit" id="dr-submit">Send demo text</button>
+
+        <p class="dr-privacy">We'll only use your number to send this demo text.</p>
+
+        <div class="dr-status dr-status--error" id="dr-send-error" role="alert" hidden>
+          Something went wrong sending the demo. Please try again.
+        </div>
+      </form>
+
+      <div class="dr-success" id="dr-success" role="status" aria-live="polite" hidden>
+        <div class="dr-success-ic" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M20 6 9 17l-5-5"/></svg>
+        </div>
+        <h3>Demo sent. Check your phone in a few seconds.</h3>
+      </div>
+    </div>
+  </div>
+</section>

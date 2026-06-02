@@ -1,0 +1,18 @@
+# Server-side secrets for the /api/demo Cloudflare Pages Function.
+# Copy to `.dev.vars` (gitignored) for local `wrangler pages dev`.
+# In production, set these same vars in the Cloudflare Pages dashboard
+# (Settings -> Environment variables / Secrets) — NOT here.
+#
+# None of these are ever exposed to the browser.
+
+# n8n "Start Demo" webhook. N8N_DEMO_SECRET must equal the Header Auth value
+# configured on that webhook (sent as the x-demo-secret header).
+N8N_DEMO_WEBHOOK_URL=https://your-n8n-host/webhook/start-demo
+N8N_DEMO_SECRET=replace-with-the-n8n-header-auth-value
+
+# Supabase service role key — used ONLY server-side for the per-phone throttle
+# count. Never put this in client code or a VITE_ var.
+SUPABASE_SERVICE_ROLE_KEY=replace-with-service-role-key
+
+# Optional — defaults to the project URL if omitted.
+SUPABASE_URL=https://sibyvtphxadrqnwamgdt.supabase.co

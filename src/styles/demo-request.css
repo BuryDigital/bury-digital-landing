@@ -18,8 +18,8 @@
 
 .dr-row { display: flex; gap: 16px; }
 @media (max-width: 560px) { .dr-row { flex-direction: column; gap: 18px; } }
-.dr-field-phone { flex: 1 1 58%; }
-.dr-field-industry { flex: 1 1 42%; }
+.dr-field-phone { flex: 1 1 50%; }
+.dr-field-industry { flex: 1 1 50%; }
 
 .demo-request .field { display: flex; flex-direction: column; gap: 8px; margin: 0; }
 .demo-request label {
@@ -54,17 +54,8 @@
 }
 .demo-request select option { background: #ffffff; color: #111111; }
 
-/* Invalid phone state. */
-.demo-request input.dr-invalid {
-  border-color: var(--error) !important;
-  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.15) !important;
-}
-
-.dr-hint { margin: 14px 0 0; font-size: 13px; line-height: 20px; color: var(--fg-subtle); }
-.dr-hint strong { color: var(--fg-muted); font-weight: 600; }
-
 .dr-error {
-  margin-top: 12px;
+  margin-top: 14px;
   padding: 10px 12px;
   border-radius: 8px;
   background: var(--error-soft);
@@ -85,33 +76,16 @@
   text-align: center;
 }
 
-.dr-status--error {
-  margin-top: 14px;
-  padding: 12px 14px;
-  border-radius: 8px;
-  background: var(--error-soft);
-  border: 1px solid rgba(239, 68, 68, 0.35);
-  color: #B91C1C;
-  font-size: 14px;
-  line-height: 21px;
-}
-
-/* Success state. */
-.dr-success { text-align: center; padding: 8px 4px 4px; }
-.dr-success-ic {
+/* Success state — replaces the form. */
+.dr-result { text-align: center; padding: 8px 4px 4px; }
+.dr-result-ic {
   width: 56px; height: 56px; border-radius: 999px;
   background: var(--accent-soft); color: var(--accent-ink);
   display: flex; align-items: center; justify-content: center;
   margin: 0 auto 16px;
 }
-.dr-success-ic svg { width: 28px; height: 28px; }
-.dr-success h3 {
+.dr-result-ic svg { width: 28px; height: 28px; }
+.dr-result h3 {
   font-size: 20px; font-weight: 600; color: var(--fg);
   letter-spacing: -0.01em; margin: 0;
-}
-
-/* Honeypot — visually hidden, still submitted. */
-.dr-honeypot {
-  position: absolute; left: -9999px; top: auto;
-  width: 1px; height: 1px; overflow: hidden;
 }

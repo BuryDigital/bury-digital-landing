@@ -24,6 +24,9 @@
 @import './contact.css';
 @import './footer.css';
 
+/* Product repositioning page (preview) */
+@import './product.css';
+
 /* Standalone pages */
 @import './legal.css';
 @import './form.css';

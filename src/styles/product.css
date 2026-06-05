@@ -169,13 +169,13 @@
 
 /* -------- Social proof line (understated, real live-trial figures) -------- */
 .pp-proof {
-  margin: 36px auto 0;
-  max-width: 60ch;
+  margin: 36px auto 48px;     /* extra breathing room before the door cards below */
+  max-width: 46ch;            /* wraps to balanced lines, no orphan word */
   text-align: center;
   font-size: 15px;
   line-height: 24px;
   color: var(--fg-muted);
-  text-wrap: pretty;
+  text-wrap: balance;
 }
 .pp-proof .pp-proof-client { color: var(--fg); font-weight: 500; }
 .pp-proof .pp-proof-fig {

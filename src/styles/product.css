@@ -167,16 +167,19 @@
 .pp-path p { font-size: 14px; line-height: 21px; color: var(--fg-muted); margin: 0 0 18px; }
 .pp-path .btn { width: 100%; }
 
-/* -------- Clearly-marked placeholder (for the owner to fill) -------- */
-.pp-placeholder {
-  border: 1px dashed var(--border-strong);
-  border-radius: 12px;
-  background: repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(17,17,17,0.015) 10px, rgba(17,17,17,0.015) 20px);
-  padding: 22px 24px;
+/* -------- Social proof line (understated, real live-trial figures) -------- */
+.pp-proof {
+  margin: 36px auto 0;
+  max-width: 60ch;
   text-align: center;
-  color: var(--fg-subtle);
-  font-size: 14px;
-  margin: 40px auto 0;
-  max-width: 760px;
+  font-size: 15px;
+  line-height: 24px;
+  color: var(--fg-muted);
+  text-wrap: pretty;
 }
-.pp-placeholder b { color: var(--fg-muted); font-weight: 600; }
+.pp-proof .pp-proof-client { color: var(--fg); font-weight: 500; }
+.pp-proof .pp-proof-fig {
+  color: var(--accent-ink);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}

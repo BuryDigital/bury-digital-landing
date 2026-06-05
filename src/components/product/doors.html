@@ -1,63 +1,52 @@
 <section id="doors">
   <div class="wrap">
     <div class="section-head">
-      <div class="eb-text">Two ways we help</div>
-      <h2 class="h">Pick the problem that sounds like you.</h2>
-      <p>Most businesses want both — and you can start with either one.</p>
+      <div class="eb-text">What we do</div>
+      <h2 class="h">Two ways to fix lost enquiries.</h2>
+      <p>Start with the problem that hurts most.</p>
     </div>
 
-    <!-- ── SERVICE NAMES — single editable source ───────────────────────────
-         The two card names are stored as include "constants" so renaming them
-         in ONE place updates every reference (cards, justification lines,
-         pricing, final CTAs) automatically:
-           Capture →  src/components/product/names/capture.html
-           Triage  →  src/components/product/names/triage.html
-         The plain subtitles beneath each name are kept as normal copy below.
-    ───────────────────────────────────────────────────────────────────────── -->
+    <!-- Short comparison strip (especially useful before the cards stack on mobile) -->
+    <div class="pp-compare">
+      <span><b>Capture</b> = catch every enquiry</span>
+      <span class="pp-compare-sep" aria-hidden="true">·</span>
+      <span><b>Triage</b> = know who to call first</span>
+    </div>
+
+    <!-- ── SERVICE NAMES — single editable source (names/capture.html, names/triage.html) ── -->
     <div class="pp-doors">
 
-      <!-- Card 1 — Capture -->
-      <div class="pp-door">
+      <!-- Capture — PRODUCT -->
+      <div class="pp-door" id="capture">
+        <div class="pp-door-label">Product</div>
         <h3 class="pp-door-name"><!-- @include: names/capture.html --></h3>
         <p class="pp-door-sub">Never miss an enquiry</p>
-        <p class="pp-door-kind">A ready-made product you switch on. It runs itself, and it's the same flat price for everyone.</p>
-        <p class="pp-door-lede">We catch every enquiry that comes in — the calls you can't take, your emails, and messages from your website — so nothing gets lost. Every one is written down and ready for you.</p>
-        <ul class="pp-door-feats">
-          <li><!-- @include: ../icons/check.html -->Missed calls get a friendly text back in seconds</li>
-          <li><!-- @include: ../icons/check.html -->Email and website enquiries land in the same place</li>
-          <li><!-- @include: ../icons/check.html -->A tidy record of every enquiry, nothing forgotten</li>
-        </ul>
-        <p class="pp-door-bestfor"><b>Best for</b> busy, high-volume businesses where a missed call is a lost job — trades, home services, and anyone fielding more calls than they can answer.</p>
+        <p class="pp-door-lede">Catches missed calls, email enquiries and website enquiries so nothing gets lost.</p>
+        <p class="pp-door-bestfor"><b>Best for</b> high-volume businesses where a missed enquiry usually means a lost job.</p>
         <div class="pp-door-foot">
-          <div class="pp-price"><span class="from">from</span><span class="num">$297</span><span class="per">/ month</span></div>
-          <a class="btn btn-primary btn-lg" href="#pricing">Start here</a>
+          <div class="pp-price"><span class="num">$297</span><span class="per">/ month</span></div>
+          <p class="pp-door-note">Flat price. Same core product for every business.</p>
+          <a class="btn btn-primary btn-lg" href="/start-trial.html">Start Capture</a>
         </div>
       </div>
 
-      <!-- Card 2 — Triage -->
-      <div class="pp-door">
+      <!-- Triage — SERVICE -->
+      <div class="pp-door" id="triage">
+        <div class="pp-door-label">Service</div>
         <h3 class="pp-door-name"><!-- @include: names/triage.html --></h3>
         <p class="pp-door-sub">Know who's worth your time</p>
-        <p class="pp-door-kind">A service we build around your business — and a real person keeps it tuned.</p>
-        <p class="pp-door-lede">We look at every enquiry and tell you who to call back first and who can wait — so your time goes to the jobs that matter most. You get the answer, not a busy inbox to work through.</p>
-        <ul class="pp-door-feats">
-          <li><!-- @include: ../icons/check.html -->Every enquiry sorted, so you know who to call first</li>
-          <li><!-- @include: ../icons/check.html -->Set up around what a good job looks like for you</li>
-          <li><!-- @include: ../icons/check.html -->Tuned over time to what actually wins you work</li>
-        </ul>
-        <p class="pp-door-bestfor"><b>Best for</b> businesses with fewer, higher-value enquiries where it matters who you call back first — law, accounting and finance, specialist or commercial builders, clinics and agencies — where one job is worth a lot and your time is tight.</p>
+        <p class="pp-door-lede">Built around your business so you know who to call back first.</p>
+        <p class="pp-door-bestfor"><b>Best for</b> businesses with fewer, higher-value enquiries where the right callback matters.</p>
         <div class="pp-door-foot">
-          <div class="pp-quote">Tailored to your business — get in touch
-            <span class="sub">We price it around your situation, not a one-size-fits-all number.</span>
-          </div>
-          <a class="btn btn-primary btn-lg" href="#contact">Get in touch</a>
+          <div class="pp-price"><span class="word">Tailored price</span></div>
+          <p class="pp-door-note">Setup and ongoing tuning are handled with you.</p>
+          <a class="btn btn-primary btn-lg" href="#contact">Talk about Triage</a>
         </div>
       </div>
 
     </div>
     <div class="pp-doors-note">
-      <p>Both <!-- @include: names/capture.html --> and <!-- @include: names/triage.html --> put your enquiries in order. <!-- @include: names/capture.html --> gives you a sensible order to work through; <!-- @include: names/triage.html --> makes that order genuinely right for your business — and keeps it accurate as things change.</p>
-      <p>That's why one price is fixed and one isn't: <!-- @include: names/capture.html --> is software that runs itself, so it's one set price for everyone. <!-- @include: names/triage.html --> is built around you and tuned every month by a real person, so it's priced to your situation.</p>
+      <p>Both put your enquiries in order. <!-- @include: names/capture.html --> is the same for every business; <!-- @include: names/triage.html --> is built around you and tuned over time — which is why one price is fixed and the other is tailored.</p>
       <p class="pp-doors-note-help">Not sure which fits? Tell us how your business works and we'll point you to the right one.</p>
     </div>
   </div>

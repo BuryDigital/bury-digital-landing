@@ -107,7 +107,17 @@
 }
 .pp-door-bestfor b { color: var(--fg); }
 
-.pp-door-foot { margin-top: 0; }
+.pp-door-foot { margin-top: auto; }
+
+/* "Best for" — quick-scan industry tags inside each comparison card */
+.pp-bestfor { margin: 4px 0 20px; }
+.pp-bestfor .l { font-size: 12px; text-transform: uppercase; letter-spacing: 0.07em; color: var(--fg-subtle); font-weight: 600; margin-bottom: 8px; }
+.pp-bestfor-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.pp-bestfor-tags span {
+  font-size: 12px; line-height: 1; color: var(--fg-muted);
+  background: var(--surface-2); border: 1px solid var(--border);
+  border-radius: 999px; padding: 6px 10px;
+}
 .pp-price { display: flex; align-items: baseline; gap: 7px; margin-bottom: 16px; }
 .pp-price .from { font-size: 13px; color: var(--fg-subtle); }
 .pp-price .num { font-size: 30px; font-weight: 600; letter-spacing: -0.02em; color: var(--fg); font-variant-numeric: tabular-nums; line-height: 1; }

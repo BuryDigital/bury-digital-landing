@@ -54,6 +54,10 @@
 /* -------- Two doors (the spine) -------- */
 .pp-doors { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: stretch; }
 @media (max-width: 860px) { .pp-doors { grid-template-columns: 1fr; } }
+@media (max-width: 560px) {
+  .pp-door { padding: 24px; }
+  .pp-door h3 { font-size: 23px; }
+}
 
 .pp-door {
   position: relative;
@@ -84,7 +88,8 @@
   margin-bottom: 18px;
 }
 .pp-door-num { font-size: 12px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--fg-subtle); font-weight: 600; margin-bottom: 10px; }
-.pp-door h3 { font-size: 26px; font-weight: 600; letter-spacing: -0.02em; color: var(--fg); margin: 0 0 12px; }
+.pp-door h3 { font-size: 26px; font-weight: 600; letter-spacing: -0.02em; color: var(--fg); margin: 0 0 8px; }
+.pp-door .pp-door-kind { font-size: 13px; line-height: 19px; color: var(--accent-ink); font-weight: 500; margin: 0 0 14px; }
 .pp-door .pp-door-lede { font-size: 16px; line-height: 25px; color: var(--fg-muted); margin: 0 0 20px; }
 
 .pp-door-feats { list-style: none; margin: 0 0 24px; padding: 0; display: flex; flex-direction: column; gap: 10px; }
@@ -113,7 +118,10 @@
 .pp-quote { font-size: 16px; font-weight: 500; color: var(--accent-ink); margin-bottom: 16px; }
 .pp-quote .sub { display: block; font-size: 13px; font-weight: 400; color: var(--fg-subtle); margin-top: 4px; }
 .pp-door .btn { width: 100%; }
-.pp-doors-note { text-align: center; font-size: 14px; color: var(--fg-subtle); margin: 28px auto 0; max-width: 56ch; }
+.pp-doors-note { text-align: center; margin: 32px auto 0; max-width: 62ch; }
+.pp-doors-note p { font-size: 14px; line-height: 22px; color: var(--fg-muted); margin: 0 0 12px; text-wrap: pretty; }
+.pp-doors-note p:last-child { margin-bottom: 0; }
+.pp-doors-note .pp-doors-note-help { color: var(--fg-subtle); margin-top: 14px; }
 
 /* -------- Made for your business (customisation) -------- */
 .pp-tailored { background: var(--surface-2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }

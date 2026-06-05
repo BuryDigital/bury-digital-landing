@@ -8,6 +8,7 @@
 .price-sub { font-size:13px; color:var(--fg-subtle); margin-bottom:24px; }
 .price-feats { display:grid; grid-template-columns:1fr 1fr; gap:10px 20px; margin-bottom:28px; }
 @media (max-width:640px){ .price-feats { grid-template-columns:1fr; } }
+@media (max-width:560px){ .main-price { padding:28px 22px; } .price-num .big { font-size:48px; } .price-tag { position:static; display:inline-flex; margin-bottom:12px; } }
 .price-feats li { list-style:none; display:flex; gap:10px; align-items:flex-start; font-size:14px; color:var(--fg); }
 .price-feats li svg { flex:none; margin-top:3px; }
 .price-cta { display:flex; gap:12px; align-items:center; flex-wrap:wrap; }

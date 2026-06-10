@@ -64,6 +64,40 @@
 .pp-fixboth { text-align: center; font-size: 17px; color: var(--fg); font-weight: 500; margin: 32px auto 0; }
 .pp-fixboth b { color: var(--accent-ink); }
 
+/* -------- Single pricing block (one product, one price) -------- */
+/* PRIMARY price card — centred and prominent via the accent border + a
+   faint top wash, reusing the .pp-door surface for visual consistency. */
+.pp-price-single { max-width: 600px; margin: 0 auto; }
+.pp-price-main {
+  border-color: var(--accent);
+  background-image: linear-gradient(180deg, var(--accent-soft) 0%, transparent 38%);
+}
+.pp-price-main .pp-door-sub {
+  font-size: 12px; text-transform: uppercase; letter-spacing: 0.08em;
+  font-weight: 600; color: var(--accent-ink);
+}
+
+/* SECONDARY tailored path — a slim, visually lighter strip beneath the
+   price card. Deliberately NOT a co-equal card: no shadow, softer fill. */
+.pp-tailored {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 16px 24px; flex-wrap: wrap;
+  margin-top: 14px; padding: 18px 22px;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+.pp-tailored-copy { flex: 1 1 280px; }
+.pp-tailored-copy h3 { font-size: 15px; font-weight: 600; color: var(--fg); margin: 0 0 4px; }
+.pp-tailored-copy p { font-size: 13px; line-height: 20px; color: var(--fg-muted); margin: 0; text-wrap: pretty; }
+.pp-tailored .btn { flex: none; }
+
+/* Unifying line — prioritisation is for everyone, on both buying paths. */
+.pp-price-allnote {
+  text-align: center; margin: 24px auto 0; max-width: 60ch;
+  font-size: 15px; line-height: 23px; color: var(--fg); font-weight: 500;
+}
+
 /* -------- Two doors (the spine) -------- */
 .pp-doors { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: stretch; }
 @media (max-width: 860px) { .pp-doors { grid-template-columns: 1fr; } }

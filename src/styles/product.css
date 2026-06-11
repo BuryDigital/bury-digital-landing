@@ -191,6 +191,9 @@
 /* Pricing two-column reuses the door cards */
 .pp-pricing-grid { margin-bottom: 4px; }
 
+/* Quiet bottom price line */
+.pp-price-line { text-align: center; margin: 0; padding: 24px 20px 4px; font-size: 13px; line-height: 20px; color: var(--fg-subtle); }
+
 /* Trust strip */
 .pp-trust-strip { padding: 28px 0; border-top: 1px solid var(--border); background: var(--surface-2); }
 .pp-trust-items {

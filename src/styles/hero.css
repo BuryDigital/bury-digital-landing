@@ -52,7 +52,7 @@ h1.display em { font-style:normal; color:var(--accent-ink); }
 .sms .tick { font-size:10px; color:#9A9AAA; align-self:flex-end; margin-top:2px; }
 
 /* floating notification */
-.float-note { position:absolute; top:-16px; right:-20px; background:var(--mock-surface); border:1px solid #2A2A35; border-radius:12px; padding:10px 14px; display:flex; align-items:center; gap:10px; box-shadow:0 16px 40px -16px rgba(17,17,17,0.30); }
+.float-note { position:absolute; top:-46px; right:-24px; background:var(--mock-surface); border:1px solid #2A2A35; border-radius:12px; padding:10px 14px; display:flex; align-items:center; gap:10px; box-shadow:0 16px 40px -16px rgba(17,17,17,0.30); }
 .float-note .ic { width:28px; height:28px; border-radius:8px; background:rgba(0,212,170,0.14); color:#00D4AA; display:flex; align-items:center; justify-content:center; flex:none; }
 .float-note .ic .icon { width:16px; height:16px; }
 .float-note .t { font-size:12px; color:#F0F0F0; font-weight:500; }

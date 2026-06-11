@@ -250,6 +250,20 @@
 .pp-trust-card .pp-ic { background: var(--accent-soft); color: var(--accent-ink); }
 .pp-card .pp-tag { font-size: 12px; text-transform: uppercase; letter-spacing: 0.07em; color: var(--accent-ink); font-weight: 600; }
 
+/* Per-industry question examples — one card under the two feel-cards,
+   promoted from the FAQ. Plain surface-2 text tiles, no new surface type. */
+.pp-playbook { margin-top: 16px; }
+.pp-playbook-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+@media (max-width: 760px) { .pp-playbook-grid { grid-template-columns: 1fr; } }
+.pp-pb-eg {
+  display: flex; flex-direction: column; gap: 4px;
+  padding: 14px 16px;
+  background: var(--surface-2); border: 1px solid var(--border); border-radius: 10px;
+}
+.pp-pb-trade { font-size: 14px; font-weight: 600; color: var(--fg); }
+.pp-pb-qs { font-size: 13px; line-height: 19px; color: var(--fg-muted); }
+.pp-playbook .pp-playbook-note { font-size: 13px; color: var(--fg-subtle); margin: 0; }
+
 /* -------- Works for your industry -------- */
 .pp-tags { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; max-width: 720px; margin: 36px auto 0; }
 .pp-tag-pill {
@@ -289,6 +303,9 @@
 .pp-pri-high { background: rgba(245,166,35,0.16); color: #F5A623; }
 .pp-pri-wait { background: rgba(106,106,120,0.22); color: #9A9AAA; }
 .pp-hub-foot { font-size: 11px; color: #9A9AAA; text-align: center; padding-top: 6px; }
+/* Quiet caption under the Lead Hub showcase — ties "call first" to the
+   client's own definition of a good lead. */
+.pp-hub-note { text-align: center; font-size: 13px; line-height: 20px; color: var(--fg-subtle); max-width: 54ch; margin: 18px auto 0; }
 
 /* -------- Proof block (compact, real anonymised trial figures) -------- */
 .pp-proofline { padding: 0 0 8px; }

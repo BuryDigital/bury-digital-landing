@@ -256,17 +256,16 @@
 .pp-using-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; align-items: stretch; }
 @media (max-width: 860px) { .pp-using-grid { grid-template-columns: 1fr; } }
 
-/* Per-industry question examples — the differentiator card. Compact stacked
-   rows so the card sits closer to the height of the other two. */
-.pp-playbook-grid { display: grid; grid-template-columns: 1fr; gap: 6px; }
+/* Per-industry question examples — the differentiator card. One compact line
+   per trade (bold name + inline questions) so the card matches the others. */
+.pp-playbook-grid { display: grid; grid-template-columns: 1fr; gap: 5px; }
 .pp-pb-eg {
-  display: flex; flex-direction: column; gap: 2px;
-  padding: 8px 12px;
-  background: var(--surface-2); border: 1px solid var(--border); border-radius: 10px;
+  padding: 5px 10px;
+  background: var(--surface-2); border: 1px solid var(--border); border-radius: 8px;
+  font-size: 12px; line-height: 16px; color: var(--fg-muted); text-wrap: pretty;
 }
-.pp-pb-trade { font-size: 13px; font-weight: 600; color: var(--fg); }
-.pp-pb-qs { font-size: 12px; line-height: 16px; color: var(--fg-muted); }
-.pp-playbook .pp-playbook-note { font-size: 13px; color: var(--fg-subtle); margin: 0; }
+.pp-pb-trade { font-weight: 600; color: var(--fg); }
+.pp-playbook .pp-playbook-note { font-size: 12px; line-height: 16px; color: var(--fg-subtle); margin: -4px 0 0; }
 
 /* -------- Works for your industry -------- */
 .pp-tags { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; max-width: 720px; margin: 36px auto 0; }

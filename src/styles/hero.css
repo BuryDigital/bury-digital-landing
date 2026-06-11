@@ -21,14 +21,10 @@ h1.display em { font-style:normal; color:var(--accent-ink); }
 /* Hero product mock — slightly reduced in size/weight and given side
    breathing room so the top of the page isn't so dark-heavy. */
 .hero-mock { position:relative; max-width:440px; margin-inline:auto; }
-.mock { background:var(--mock-surface); border:1px solid #2A2A35; border-radius:var(--mock-radius); overflow:hidden; box-shadow: var(--mock-shadow), 0 0 0 1px rgba(255,255,255,0.02) inset; }
+.mock { background:var(--mock-surface); border:1px solid #2A2A35; border-radius:var(--mock-radius); overflow:hidden; position:relative; box-shadow: var(--mock-shadow), 0 0 0 1px rgba(255,255,255,0.02) inset; }
 .mock-bar { display:flex; align-items:center; gap:8px; padding:12px 14px; border-bottom:1px solid #2A2A35; background:#0F0F15; }
 .mock-bar .td { width:10px; height:10px; border-radius:999px; }
 .mock-bar .title { margin-left:auto; font-size:11px; color:#9A9AAA; }
-/* Hero mock only: title sits at the LEFT (after the traffic lights) so the
-   floating notification can keep its deep top-right corner overlap without
-   covering the label. The Lead Hub section mock keeps its right-aligned title. */
-.hero-mock .mock-bar .title { margin-left:0; }
 .mock-body { padding:18px; display:flex; flex-direction:column; gap:14px; }
 .mock-h { display:flex; align-items:center; justify-content:space-between; padding:0 2px; }
 .mock-h-l { display:flex; flex-direction:column; gap:2px; }
@@ -55,10 +51,11 @@ h1.display em { font-style:normal; color:var(--accent-ink); }
 .sms .them { align-self:flex-end; background:#00D4AA; color:#0A0A0F; border-bottom-right-radius:4px; font-weight:500; }
 .sms .tick { font-size:10px; color:#9A9AAA; align-self:flex-end; margin-top:2px; }
 
-/* floating notification */
-.float-note { position:absolute; top:-16px; right:-20px; background:var(--mock-surface); border:1px solid #2A2A35; border-radius:12px; padding:10px 14px; display:flex; align-items:center; gap:10px; box-shadow:0 16px 40px -16px rgba(17,17,17,0.30); }
+/* In-app notification — pinned top-right INSIDE the mock window, just below the
+   title bar. .mock has overflow:hidden + position:relative, so it is always
+   fully contained at every breakpoint. */
+.float-note { position:absolute; top:52px; right:12px; background:var(--mock-surface); border:1px solid #2A2A35; border-radius:10px; padding:9px 12px; display:flex; align-items:center; gap:10px; box-shadow:0 8px 22px -10px rgba(0,0,0,0.55); }
 .float-note .ic { width:28px; height:28px; border-radius:8px; background:rgba(0,212,170,0.14); color:#00D4AA; display:flex; align-items:center; justify-content:center; flex:none; }
 .float-note .ic .icon { width:16px; height:16px; }
 .float-note .t { font-size:12px; color:#F0F0F0; font-weight:500; }
 .float-note .s { font-size:11px; color:#9A9AAA; }
-@media (max-width: 960px) { .float-note { display:none; } }

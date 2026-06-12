@@ -78,10 +78,20 @@
   border-color: var(--accent);
   background-image: linear-gradient(180deg, var(--accent-soft) 0%, transparent 38%);
 }
-.pp-price-main .pp-door-sub {
-  font-size: 12px; text-transform: uppercase; letter-spacing: 0.08em;
-  font-weight: 600; color: var(--accent-ink);
+/* Founding-firm offer block — the discount, clearly inset under the list
+   price so $397 never reads as the product's standalone price. */
+.pp-founding {
+  margin: 4px 0 22px; padding: 16px;
+  background: var(--accent-soft); border: 1px solid rgba(4,120,87,0.22);
+  border-radius: 12px;
 }
+.pp-founding-head { font-size: 11px; text-transform: uppercase; letter-spacing: 0.07em; font-weight: 600; color: var(--accent-ink); margin-bottom: 8px; }
+.pp-founding .pp-price { margin-bottom: 6px; }
+.pp-founding p { font-size: 13px; line-height: 19px; color: var(--fg-muted); margin: 0; }
+
+/* Tier label pills — flagship uses the accent label; the Standard tier
+   gets a quieter, neutral variant so the hierarchy stays inverted. */
+.pp-door-label--muted { color: var(--fg-muted); background: var(--surface-2); border: 1px solid var(--border); }
 
 /* SECONDARY tailored path — a slim, visually lighter strip beneath the
    price card. Deliberately NOT a co-equal card: no shadow, softer fill. */

@@ -267,6 +267,37 @@
 .pp-pb-trade { font-weight: 600; color: var(--fg); }
 .pp-playbook .pp-playbook-note { font-size: 12px; line-height: 16px; color: var(--fg-subtle); margin: -4px 0 0; }
 
+/* -------- Why not a voice AI? (category comparison) --------
+   Three peer cards; the Bury Digital card gets the accent treatment.
+   Each card is self-contained (label + value per dimension) so it reads
+   cleanly when the grid stacks to one column on mobile. */
+.pp-vs-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; align-items: stretch; }
+@media (max-width: 860px) { .pp-vs-grid { grid-template-columns: 1fr; } }
+.pp-vs-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 24px;
+  box-shadow: var(--shadow-2);
+  display: flex; flex-direction: column;
+}
+.pp-vs-ours {
+  border-color: var(--accent);
+  background-image: linear-gradient(180deg, var(--accent-soft) 0%, transparent 38%);
+}
+.pp-vs-name {
+  font-size: 17px; font-weight: 600; letter-spacing: -0.01em; color: var(--fg);
+  padding-bottom: 14px; border-bottom: 1px solid var(--border);
+}
+.pp-vs-ours .pp-vs-name { color: var(--accent-ink); }
+.pp-vs-rows { margin: 0; display: flex; flex-direction: column; }
+.pp-vs-rows > div { padding: 14px 0; border-bottom: 1px solid var(--border); }
+.pp-vs-rows > div:last-child { border-bottom: 0; padding-bottom: 0; }
+.pp-vs-rows dt { font-size: 11px; text-transform: uppercase; letter-spacing: 0.07em; color: var(--fg-subtle); font-weight: 600; margin-bottom: 5px; }
+.pp-vs-rows dd { margin: 0; font-size: 14px; line-height: 21px; color: var(--fg-muted); text-wrap: pretty; }
+.pp-vs-ours .pp-vs-rows dd { color: var(--fg); }
+.pp-vs-foot { text-align: center; font-size: 17px; line-height: 26px; color: var(--fg); font-weight: 500; max-width: 56ch; margin: 32px auto 0; }
+
 /* -------- Works for your industry -------- */
 .pp-tags { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; max-width: 720px; margin: 36px auto 0; }
 .pp-tag-pill {

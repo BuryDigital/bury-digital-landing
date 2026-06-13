@@ -159,12 +159,6 @@
 
 .pp-door-foot { margin-top: auto; }
 
-/* Standard card has less content than Intake. With foot's margin-top:auto
-   pinning the CTA at the bottom, a second auto margin at the top of the
-   content splits the free space evenly above and below the block — so the
-   gap is balanced rather than pooling beneath the bullets. CTAs stay aligned. */
-.pp-door--center > .pp-door-label { margin-top: auto; }
-
 /* "Best for" — quick-scan industry tags inside each comparison card */
 .pp-bestfor { margin: 4px 0 20px; }
 .pp-bestfor .l { font-size: 12px; text-transform: uppercase; letter-spacing: 0.07em; color: var(--fg-subtle); font-weight: 600; margin-bottom: 8px; }

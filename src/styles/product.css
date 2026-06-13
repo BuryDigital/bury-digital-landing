@@ -207,7 +207,7 @@
 @media (max-width: 480px) { .pp-compare { border-radius: 14px; } }
 
 /* Pricing two-column reuses the door cards */
-.pp-pricing-grid { margin-bottom: 4px; }
+.pp-pricing-grid { margin-bottom: 4px; align-items: start; }
 
 /* Trust strip */
 .pp-trust-strip { padding: 28px 0; border-top: 1px solid var(--border); background: var(--surface-2); }

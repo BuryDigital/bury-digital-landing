@@ -158,6 +158,8 @@
 .pp-door-bestfor b { color: var(--fg); }
 
 .pp-door-foot { margin-top: auto; }
+/* Standard CTA sits directly after the bullets, not pinned to the card bottom. */
+.pp-door-foot--flow { margin-top: 0; }
 
 /* "Best for" — quick-scan industry tags inside each comparison card */
 .pp-bestfor { margin: 4px 0 20px; }

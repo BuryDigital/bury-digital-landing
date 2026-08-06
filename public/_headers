@@ -1,6 +1,6 @@
 # Cloudflare Pages headers
-# HTML must always revalidate so the Capture/Triage homepage can never be
-# served stale from cache. Hashed build assets are safe to cache forever.
+# HTML must always revalidate so an old homepage can never be served stale
+# from cache. Hashed build assets are safe to cache forever.
 
 /
   Cache-Control: public, max-age=0, must-revalidate

@@ -1,8 +1,13 @@
 # Deployment notes — Bury Digital landing site
 
-Static site built with Vite, deployed on Cloudflare Pages (with the `/api/demo`
-Pages Function). The homepage is the Capture/Triage positioning (build marker
-`<!-- Bury Digital Capture/Triage homepage v2 -->` in `index.html`).
+Static site built with Vite, deployed on Cloudflare Pages. The homepage is the
+automation-studio positioning (build marker
+`<!-- Bury Digital automation-studio homepage v1 -->` in `index.html`).
+
+> Note: the old `/api/demo` Pages Function and the "Try it live" SMS demo were
+> removed in the automation-studio pivot. The upstream n8n "Start Demo" webhook
+> and its Twilio/Supabase wiring are no longer called by this site and can be
+> retired separately.
 
 ## Build
 
@@ -48,6 +53,7 @@ curl -X POST "https://api.cloudflare.com/client/v4/zones/$CF_ZONE_ID/purge_cache
 ## Verify after deploy
 
 - View source on `https://bury-digital.com/` and confirm the marker
-  `<!-- Bury Digital Capture/Triage homepage v2 -->` is present.
-- Confirm the hero reads "Never miss an enquiry — and know who to call back first."
-- Confirm both **Capture** and **Triage** cards render.
+  `<!-- Bury Digital automation-studio homepage v1 -->` is present.
+- Confirm the hero reads "We build automation systems that kill the manual work."
+- Confirm the four-category offer menu renders under **Pricing**.
+- Confirm every CTA points at `https://cal.com/oscarbury` and no "free trial" text remains.

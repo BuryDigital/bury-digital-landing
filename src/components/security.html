@@ -3,31 +3,46 @@
     <header class="legal-head">
       <div class="eb-text">Legal</div>
       <h1>Security</h1>
-      <div class="updated">Bury Digital · ABN 31 850 554 300 · Last updated: May 2026</div>
+      <div class="updated">Bury Digital · ABN 31 850 554 300 · Last updated: August 2026</div>
     </header>
 
     <div class="legal-doc">
-      <p>Security is a core requirement, not a feature. This page describes the technical and organisational measures we take to protect Customer Data and End User personal information, in line with Australian Privacy Principle 11 (Security of personal information).</p>
-      <h2>Infrastructure</h2>
-      <ul><li><strong>Encrypted in transit.</strong> All communication between users, our application, and our subprocessors uses TLS 1.2 or higher.</li><li><strong>Encrypted at rest.</strong> Customer Data stored in our database (Supabase Postgres) is encrypted at rest using AES-256.</li><li><strong>Australian-hosted database.</strong> Our primary database is located in the Sydney (ap-southeast-2) region.</li><li><strong>Edge security.</strong> Cloudflare provides DDoS protection, Web Application Firewall, and bot mitigation at the network edge.</li></ul>
-      <h2>Multi-tenancy and isolation</h2>
-      <ul><li><strong>Row-Level Security (RLS).</strong> Our database enforces strict tenant isolation at the row level. A Customer can only access data belonging to their own account, enforced at the database engine, not just in application code.</li><li><strong>No shared credentials.</strong> Each Customer authenticates with their own credentials. We do not use shared API keys or accounts across Customers.</li></ul>
-      <h2>Access controls</h2>
-      <ul><li><strong>Least privilege.</strong> Bury Digital personnel access production data only when necessary to deliver support or operate the Service.</li><li><strong>Audit logging.</strong> Administrative actions are logged.</li><li><strong>Strong authentication.</strong> Access to our infrastructure requires strong, unique credentials and, where supported, multi-factor authentication.</li></ul>
+      <p>Security matters as much for a build as for a product. This page describes how we protect your data and your accounts while designing, building, and handing over a Project, in line with Australian Privacy Principle 11 (Security of personal information).</p>
+      <h2>Built in your own accounts</h2>
+      <ul>
+        <li><strong>Your data stays with you.</strong> Wherever possible, we build directly in your own tools and accounts. Your data — and your customers' data — lives in the platforms you already control, not on our infrastructure.</li>
+        <li><strong>Encrypted in transit.</strong> Communication with the platforms and APIs we work with uses TLS.</li>
+        <li><strong>You keep ownership.</strong> On handover, the Deliverables and their data remain in your accounts, so you retain full control.</li>
+      </ul>
+      <h2>Access and credentials</h2>
+      <ul>
+        <li><strong>Least privilege.</strong> We request only the access a Project actually needs, and prefer scoped, revocable access over full admin where the platform allows it.</li>
+        <li><strong>Credentials handled carefully.</strong> Where we hold API keys or credentials to build a Project, we store them in a secrets manager, never in plain text, and never share them across clients.</li>
+        <li><strong>Access removed on completion.</strong> When an engagement ends, we return or revoke our access to your accounts. If you take a Retainer, we keep the minimum access needed to maintain the build.</li>
+      </ul>
       <h2>AI processing</h2>
-      <ul><li><strong>No training on Customer Data.</strong> We do not use any Customer Data or End User Data to train artificial intelligence models, including our own.</li><li><strong>API-only AI processing.</strong> AI qualification runs via the Anthropic API, which under Anthropic's commercial terms does not retain or train on inbound API data.</li></ul>
-      <h2>Subprocessors</h2>
-      <p>We use a small number of carefully chosen subprocessors. Each is reviewed for security and privacy posture before being engaged. The full list is published at <a href="https://bury-digital.com/subprocessors.html">bury-digital.com/subprocessors.html</a>.</p>
-      <h2>Backups and continuity</h2>
-      <ul><li>Customer Data is backed up regularly via our database provider's native backup mechanisms.</li><li>We can restore from backups in the event of data loss caused by infrastructure failure.</li></ul>
+      <ul>
+        <li><strong>No training on your data.</strong> We do not use your data, or your customers' data, to train artificial intelligence models.</li>
+        <li><strong>API-only AI.</strong> Where a build uses AI, it runs via the provider's API (for example the Anthropic API), which under its commercial terms does not retain or train on inbound API data.</li>
+      </ul>
+      <h2>Our own systems</h2>
+      <ul>
+        <li>We keep our working devices up to date and protected, and use strong, unique credentials with multi-factor authentication where supported.</li>
+        <li>Any project data we hold temporarily (for testing or migration) is protected with reasonable measures and deleted when no longer needed.</li>
+      </ul>
       <h2>Incident response</h2>
-      <ul><li>We monitor the Service for security incidents.</li><li>If we become aware of a personal information breach that is likely to cause serious harm, we will notify affected Customers and the Office of the Australian Information Commissioner (OAIC) in accordance with the Notifiable Data Breaches scheme.</li><li>Our target notification window for likely-serious breaches is <strong>72 hours</strong> from the time we form a reasonable belief that a breach has occurred.</li></ul>
-      <h2>What we ask of Customers</h2>
-      <p>Security is shared. To help keep your data safe:</p>
-      <ul><li>Use a strong, unique password for your Bury Digital account</li><li>Do not share account credentials</li><li>Notify us immediately at oscar@bury.com.au if you suspect unauthorised access</li><li>Keep your contact details current so we can reach you about security matters</li></ul>
+      <ul>
+        <li>If we become aware of a data breach involving information we handle for you that is likely to cause serious harm, we will notify you without undue delay — targeting within <strong>72 hours</strong> of forming a reasonable belief that a breach has occurred.</li>
+        <li>We will assist you to meet your obligations under the Notifiable Data Breaches scheme, and will notify the Office of the Australian Information Commissioner (OAIC) where we are required to.</li>
+      </ul>
+      <h2>What we ask of you</h2>
+      <ul>
+        <li>Grant us the minimum access a Project needs, and revoke it when the engagement ends.</li>
+        <li>Use strong, unique passwords and multi-factor authentication on the accounts we work in.</li>
+        <li>Tell us promptly if you suspect any unauthorised access.</li>
+      </ul>
       <h2>Reporting a vulnerability</h2>
-      <p>If you believe you have found a security vulnerability in the Service, please email oscar@bury.com.au with details. We commit to:</p>
-      <ul><li>Acknowledging your report within 3 business days</li><li>Investigating and responding promptly</li><li>Not pursuing legal action against good-faith researchers who follow responsible disclosure</li></ul>
+      <p>If you believe you have found a security issue in something we built or in our website, email oscar@bury.com.au. We commit to acknowledging your report within 3 business days, investigating promptly, and not pursuing legal action against good-faith researchers who follow responsible disclosure.</p>
       <h2>Contact</h2>
       <p>Questions about security? Email oscar@bury.com.au.</p>
     </div>

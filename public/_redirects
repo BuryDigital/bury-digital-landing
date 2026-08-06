@@ -1,0 +1,6 @@
+# Cloudflare Pages redirects — retired routes from the SaaS-era site.
+# Keep these so old bookmarks, search results, and profile links don't 404.
+/start-trial.html      /#pricing      301
+/acceptable-use.html   /terms.html    301
+/subprocessors.html    /              301
+/dpa.html              /              301

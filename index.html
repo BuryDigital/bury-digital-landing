@@ -24,6 +24,10 @@
 <meta property="og:image:height" content="630" />
 <meta property="og:image:alt" content="Bury Digital — automation builds for Australian businesses" />
 <meta property="og:locale" content="en_AU" />
+<!-- Freshness signal. og:type is "website", not "article", so og:updated_time is
+     the correct property here rather than article:modified_time. The token is
+     replaced with the build timestamp by stampBuildDate() in vite.config.js. -->
+<meta property="og:updated_time" content="__BUILD_DATETIME__" />
 
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="Bury Digital — Automation builds for Australian businesses" />
@@ -36,6 +40,8 @@
 <link rel="preload" as="font" type="font/woff2" href="/src/assets/fonts/Inter-VariableFont_opsz_wght.woff2" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/src/styles/index.css">
+
+<!-- @include: src/components/schema/home.html -->
 </head>
 <body>
 <!-- Bury Digital automation-studio homepage v1 -->

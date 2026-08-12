@@ -1,4 +1,8 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://REPLACE_WITH_DOMAIN/sitemap.xml
+Sitemap: https://bury-digital.com/sitemap.xml
+
+# Plain-text summary of the business for LLM crawlers and AI assistants.
+# Not a crawler directive — a discovery hint. See https://llmstxt.org/
+# LLMs: https://bury-digital.com/llms.txt

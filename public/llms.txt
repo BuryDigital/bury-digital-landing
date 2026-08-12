@@ -1,0 +1,61 @@
+# Bury Digital
+
+> A Melbourne automation studio building fixed-scope automation systems for Australian businesses. Lead intake, CRM & data operations, dashboards, and AI workflows — built into the client's own accounts, delivered in days for a fixed price, and handed over with full documentation and no lock-in.
+
+Bury Digital is a solo studio run by Oscar Bury (Founder) in Melbourne, Victoria, serving businesses across Australia. Every engagement is a one-off, fixed-price build rather than a subscription or a retainer: the scope and price are agreed before any work starts, the system is built wherever possible on the client's own tools and credentials, and the client owns the result outright.
+
+The work is connecting the tools a business already uses so that manual, repetitive jobs stop being done by hand — enquiries that go unanswered, data re-typed between an inbox, a spreadsheet and a CRM, numbers scattered across five tools with no single live view, and the same admin repeated every day.
+
+Builds are typically implemented on n8n plus the client's existing systems. If a job can be automated with those tools, it is in scope even if it does not map neatly onto one of the four categories below.
+
+## What Bury Digital builds
+
+Four build categories. Each is priced in three tiers — Entry, Core, or Complex. All prices are in AUD and ex GST, and are indicative ranges; an exact fixed quote follows a call.
+
+- [Lead generation & intake automation](https://bury-digital.com/#services): Capture every enquiry — from forms, inbox, phone or ads — qualify it, log it to the CRM, and route it to the right person the moment it lands. Entry $500–$900 (auto-acknowledgement plus a lead summary into the CRM or inbox); Core $1,200–$2,500 (full intake pipeline — qualification, CRM logging, routing); Complex $3,000–$5,000 (multi-channel, conversational qualification with escalation routing).
+- [CRM & data operations](https://bury-digital.com/#services): Clean, dedupe, enrich, migrate, and sync data so every tool stays in step automatically. Entry $500–$900 (CRM cleanup and dedupe with a documented ruleset); Core $1,200–$2,500 (sync or migration between tools, plus an enrichment pipeline); Complex $3,000–$5,000 (full data-ops layer — scheduled syncs, validation, alerting).
+- [Dashboards & reporting](https://bury-digital.com/#services): Pull numbers out of multiple tools into one live picture, fed straight from existing systems. Entry $500–$900 (automated weekly report by email or Slack); Core $1,200–$2,500 (live dashboard fed by automated pipelines); Complex $3,000–$4,500 (multi-source ops dashboard with alert thresholds).
+- [AI content & ops workflows](https://bury-digital.com/#services): Put AI to work on real jobs — inbox triage, review responses, content repurposing, document generation, multi-step ops assistants. Entry $500–$900 (one targeted workflow); Core $1,200–$2,500 (content-repurposing pipeline or document-generation workflow); Complex $3,000–$5,000 (multi-step ops assistant across a full function).
+
+Optional after go-live: ongoing monitoring and small tweaks from $200–$500/month, cancel anytime. This is optional and separate from the build price — there is no subscription to the software itself.
+
+## Delivery model
+
+- [Fixed price, fixed scope](https://bury-digital.com/#using): What gets built and what it costs are agreed before work starts. No hourly meter, no scope creep, no open-ended retainer.
+- [Built in the client's own accounts](https://bury-digital.com/#using): Wherever possible everything runs on the client's own tools and credentials, not locked inside Bury Digital. The client owns it and can walk away with it at any time.
+- [Full handover, no lock-in](https://bury-digital.com/#using): Every build ships with an export of the whole system, written documentation, and a walkthrough video, so the client — or anyone they hire later — can run and change it.
+- Delivery times: Entry builds are usually 1–2 days, Core 3–6 days, Complex 1–3 weeks. A firm timeline comes with the fixed quote.
+- Support: a 7-day defect-fix window after handover is included in every build. If something built doesn't work as agreed, it is fixed at no charge.
+- Payment terms: Entry builds 100% upfront; Core 50% deposit and 50% on delivery; Complex staged by milestone.
+
+## Example build (anonymised)
+
+- [Lead intake for an Australian law firm](https://bury-digital.com/): A missed-call intake system. In week one it recovered **12 missed-call leads**, replied in **~3 seconds** on average, and achieved a **67% caller reply rate**. Real, anonymised figures from an Australian firm; the client is not named. These are leads captured and replies received — not won clients or revenue.
+
+## Location and coverage
+
+- Based in Melbourne, Victoria, Australia.
+- Serves businesses across Australia. Work is remote; there is no published street address.
+- ABN 31 850 554 300. Prices in AUD, ex GST. Locale en-AU.
+
+## Contact
+
+- [Book a free 20-minute call](https://cal.com/oscarbury): The fastest route — describe the manual job and get a fixed quote the same day.
+- Email: oscar@bury.com.au — typical reply the same business day.
+- Phone / SMS: 0461 495 612 (+61 461 495 612).
+- Founder and sole builder: Oscar Bury. Every system is built and handed over by him directly — no call centre, no ticket queue.
+
+## Site pages
+
+- [Home](https://bury-digital.com/): Full overview — what gets built, how it works, pricing, and FAQ.
+- [Pricing](https://bury-digital.com/#pricing): The four categories with Entry / Core / Complex tiers and price ranges.
+- [How it works](https://bury-digital.com/#using): Fixed scope, client-owned accounts, full handover.
+- [FAQ](https://bury-digital.com/#faq): What you get, build timelines, ownership, what happens if something breaks, payment plans.
+- [Referral Program](https://bury-digital.com/partners.html): Refer a business and earn 10% of the first project's value, paid once the project is delivered and paid for.
+- [Privacy Policy](https://bury-digital.com/privacy.html): How personal information is handled under the Australian Privacy Act 1988.
+- [Terms of Service](https://bury-digital.com/terms.html): Terms governing engagements.
+- [Security](https://bury-digital.com/security.html): Infrastructure, isolation, access controls, and incident response.
+
+## Optional
+
+- [Sitemap](https://bury-digital.com/sitemap.xml): Machine-readable list of all indexable pages with last-modified dates.

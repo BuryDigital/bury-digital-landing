@@ -24,6 +24,29 @@ npm run build      # outputs to ./dist
 - Only `index.html` builds to `/`. There is no second/old homepage in the build
   inputs (`vite.config.js` → `rollupOptions.input`).
 
+## Structured data and freshness (nothing to bump by hand)
+
+- JSON-LD lives in `src/components/schema/*.html`, one file per page, pulled into
+  each `<head>` with the same `<!-- @include: -->` mechanism as the body
+  components. The homepage uses a single `@graph` with `@id` cross-references
+  (`#organization`, `#oscar-bury`, `#website`, `#webpage`, `#faq`, four
+  `#service-*` nodes). Subpages repeat the `#organization` `@id` so every page
+  resolves to one business entity.
+- `stampBuildDate()` in `vite.config.js` replaces `__BUILD_DATE__` /
+  `__BUILD_DATETIME__` in HTML and rewrites `<lastmod>` in `dist/sitemap.xml` on
+  every build, in Australia/Melbourne time. **Freshness dates update themselves
+  on deploy — there is nothing manual to remember.**
+- Exception: `dateModified` on privacy / terms / security is hard-coded on
+  purpose. Those pages show "Last updated: August 2026" in visible copy, and an
+  auto-bumped date would claim the policy changed on every deploy. Bump those by
+  hand when the policy text actually changes, and keep them in step with the
+  visible line.
+- If you edit the FAQ or the pricing tiers, mirror the change in
+  `src/components/schema/home.html`. The schema answers and prices must stay
+  identical to the visible text — Google treats a mismatch as spam.
+- Do not add `aggregateRating`, `Review`, or award schema. There are no published
+  reviews to back them up, so they are a manual-action risk.
+
 ## Cache purge after deploy (do this every deploy)
 
 If Cloudflare cache is not purged automatically by your Pages deployment, purge
@@ -57,3 +80,11 @@ curl -X POST "https://api.cloudflare.com/client/v4/zones/$CF_ZONE_ID/purge_cache
 - Confirm the hero reads "We build automation systems that kill the manual work."
 - Confirm the four-category offer menu renders under **Pricing**.
 - Confirm every CTA points at `https://cal.com/oscarbury` and no "free trial" text remains.
+- Paste `https://bury-digital.com/` into the
+  [Rich Results Test](https://search.google.com/test/rich-results) and confirm
+  the FAQ and business entities are detected.
+- Confirm `https://bury-digital.com/llms.txt` and `/sitemap.xml` return 200, and
+  that the sitemap's `<lastmod>` shows the deploy date.
+- Submit the sitemap in Google Search Console (`robots.txt` now points at the
+  real domain — it previously said `REPLACE_WITH_DOMAIN`, so it had never been
+  discoverable).

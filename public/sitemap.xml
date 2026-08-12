@@ -1,32 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--
+  The <lastmod> dates below are rewritten to the build date automatically by
+  stampBuildDate() in vite.config.js when this file is copied into dist/, so
+  there is nothing to bump by hand on deploy. The dates here are just a valid
+  fallback that keeps the source file correct on its own.
+-->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://bury-digital.com/</loc>
-    <lastmod>2026-08-06</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://bury-digital.com/partners.html</loc>
-    <lastmod>2026-08-06</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://bury-digital.com/privacy.html</loc>
-    <lastmod>2026-08-06</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://bury-digital.com/terms.html</loc>
-    <lastmod>2026-08-06</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://bury-digital.com/security.html</loc>
-    <lastmod>2026-08-06</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
   </url>
